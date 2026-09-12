@@ -350,8 +350,10 @@ function wizard(form){
     send.textContent = "Sending…";
     /* Both wizards post to the same endpoint. Send the per-form subject so a
        work order and a bench application are distinguishable in the inbox.
-       Added here, not in `data` above, to keep the mailto fallback body clean. */
-    if(form.dataset.subject) data._subject = form.dataset.subject;
+       `subject` is Formspree's special field for the Subject header (NOT
+       `_subject`, which is not recognised and would show up as a body field).
+       Set here, not in `data` above, to keep the mailto fallback body clean. */
+    if(form.dataset.subject) data.subject = form.dataset.subject;
     fetch(CONFIG.ENDPOINT, {
       method: "POST",
       headers: {"Content-Type":"application/json", Accept:"application/json"},
