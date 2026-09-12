@@ -39,7 +39,12 @@ domain. Deleting it would revert the site to the github.io URL.
 
 ## Before sharing the link publicly
 
-- [ ] `assets/data.js` -> `CONFIG.ENDPOINT` is still `PASTE_YOUR_ENDPOINT_HERE`.
-      Until it's set, both wizards fall back to a `mailto:` to `hello@robix.one`.
-- [ ] `hello@robix.one` mailbox exists (needs the domain first).
+- [x] `CONFIG.ENDPOINT` wired to Formspree (`f/xkjnlwyg`). Both wizards POST JSON
+      and were verified end to end against the live site on 2026-09-12.
+- [ ] **Delete the 3 test submissions** in the Formspree inbox (1 connectivity
+      check, 1 work order, 1 bench application -- all marked "TEST").
+- [ ] `hello@robix.one` mailbox exists. Only used as the failure fallback now,
+      but the error message tells people to email it, so it must work.
+- [ ] Formspree free tier caps at 50 submissions/month. Watch it, or upgrade
+      before running any campaign.
 - [ ] Prices in `SERVICES` and specs in `PLATFORMS` are current.
