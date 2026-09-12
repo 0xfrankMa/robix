@@ -20,14 +20,12 @@ assets/
 
 ## Go live
 
-1. **Wire the forms.** `assets/data.js` → `CONFIG.ENDPOINT`. Formspree is fastest
-   (formspree.io → new form → paste the endpoint). Or any webhook that accepts a JSON POST.
-   Left unset, forms open a pre-filled email to `CONFIG.FALLBACK_EMAIL` — **change that
-   placeholder address before sharing the link.**
-2. **Deploy.** Cloudflare Pages, Netlify Drop, or Vercel — all take a folder drag.
-3. **Buy a domain.** A `.pages.dev` URL costs you credibility with university procurement.
-4. **Rename.** `Robix` appears in each page's `<title>`, `.brand` and footer.
-   Find-and-replace across `*.html` is safe.
+1. **Wire the forms.** `assets/data.js` -> `CONFIG.ENDPOINT`. Formspree is fastest
+   (formspree.io -> new form -> paste the endpoint). Or any webhook that accepts a JSON POST.
+   Left unset, forms open a pre-filled email to `CONFIG.FALLBACK_EMAIL`
+   (`hello@robix.one`) -- **that mailbox must exist before you share the link.**
+2. **Deploy.** Live on GitHub Pages from `main`. Push to `main` redeploys.
+3. **Domain.** `robix.one` -- see `DEPLOY.md` for the DNS cutover.
 
 ---
 
