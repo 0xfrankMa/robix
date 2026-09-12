@@ -4,10 +4,12 @@ Static site. No build step. GitHub Pages serves `main` at the repo root.
 
 ## Current state
 
-- **Live:** https://0xfrankma.github.io/robix/
-- **Target domain:** `robix.one` — *not yet registered* (verified available via RDAP).
+- **Live:** https://robix.one (HTTPS enforced, Let's Encrypt, auto-renews)
+- `www.robix.one` and the old `0xfrankma.github.io/robix/` both 301 to the apex.
+- Registrar: Porkbun. Registered 2026-09-12, **expires 2027-09-12** -- keep auto-renew on.
+- DNS: four A records at the apex + `www` CNAME -> `0xfrankma.github.io`.
 
-Push to `main` redeploys. No CI, no build.
+Push to `main` redeploys. No CI, no build. A push takes ~1-2 min to go live.
 
 ## Buying robix.one
 
@@ -22,37 +24,18 @@ Cloudflare Registrar does not carry `.one`, so use one of:
 
 Check the **renewal** price, not just year one.
 
-## DNS cutover (after purchase)
+## DNS cutover -- DONE
 
-Two steps, both required.
+Kept for reference. Records currently live at Porkbun:
 
-### 1. At the registrar — point DNS at GitHub
+    A      @      185.199.108.153
+    A      @      185.199.109.153
+    A      @      185.199.110.153
+    A      @      185.199.111.153
+    CNAME  www    0xfrankma.github.io
 
-Apex `robix.one`, four A records:
-
-    185.199.108.153
-    185.199.109.153
-    185.199.110.153
-    185.199.111.153
-
-And a CNAME for `www`:
-
-    www  ->  0xfrankma.github.io
-
-(If you prefer AAAA/IPv6 too: 2606:50c0:8000::153, ...8001::153, ...8002::153, ...8003::153)
-
-### 2. In this repo — claim the domain
-
-    echo "robix.one" > CNAME
-    git add CNAME && git commit -m "Point Pages at robix.one" && git push
-
-Then in repo Settings -> Pages, set the custom domain to `robix.one` and tick
-**Enforce HTTPS** once the certificate provisions (can take up to ~15 min after
-DNS propagates).
-
-**Do not commit `CNAME` before the domain resolves.** GitHub Pages redirects the
-`github.io` URL to the custom domain as soon as it sees that file, so committing
-early takes the live site down until DNS is working.
+The repo's `CNAME` file contains `robix.one`; that is what binds Pages to the
+domain. Deleting it would revert the site to the github.io URL.
 
 ## Before sharing the link publicly
 
