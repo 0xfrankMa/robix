@@ -10,7 +10,7 @@
    Left unset, forms fall back to a pre-filled email.
    ───────────────────────────────────────────────────────────── */
 const CONFIG = {
-  ENDPOINT: "PASTE_YOUR_ENDPOINT_HERE",
+  ENDPOINT: "https://formspree.io/f/xkjnlwyg",
   FALLBACK_EMAIL: "hello@robix.one",
   DIAG_FEE: 450
 };
