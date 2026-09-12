@@ -1,5 +1,5 @@
 /* ══════════════════════════════════════════════════════════════
-   JOINTWORKS — shared behaviour
+   ROBIX — shared behaviour
    Loaded on every page after data.js. Everything is guarded, so a
    page that lacks a given element simply skips that renderer.
    ══════════════════════════════════════════════════════════════ */
@@ -49,14 +49,14 @@ function nav(){
 function theme(){
   const root = document.documentElement, t = $("#tog");
   let m = "system";
-  try { m = localStorage.getItem("jw-theme") || "system"; } catch(e){}
+  try { m = localStorage.getItem("rbx-theme") || "system"; } catch(e){}
   set(m);
   function set(v){
     m = v;
     if(v === "system") root.removeAttribute("data-theme");
     else root.setAttribute("data-theme", v);
     if(t) t.textContent = "Theme · " + (v === "system" ? "auto" : v);
-    try { localStorage.setItem("jw-theme", v); } catch(e){}
+    try { localStorage.setItem("rbx-theme", v); } catch(e){}
   }
   if(t) t.addEventListener("click", () =>
     set(m === "system" ? "light" : m === "light" ? "dark" : "system"));

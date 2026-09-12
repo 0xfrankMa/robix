@@ -1,4 +1,4 @@
-# Jointworks — site v2
+# Robix — site v2
 
 Managed marketplace for humanoid robot repair, SF Bay Area. Six pages, no build step,
 no dependencies. Drag the folder onto any static host.
@@ -26,7 +26,7 @@ assets/
    placeholder address before sharing the link.**
 2. **Deploy.** Cloudflare Pages, Netlify Drop, or Vercel — all take a folder drag.
 3. **Buy a domain.** A `.pages.dev` URL costs you credibility with university procurement.
-4. **Rename.** `Jointworks` appears in each page's `<title>`, `.brand` and footer.
+4. **Rename.** `Robix` appears in each page's `<title>`, `.brand` and footer.
    Find-and-replace across `*.html` is safe.
 
 ---

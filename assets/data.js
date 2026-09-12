@@ -1,5 +1,5 @@
 /* ══════════════════════════════════════════════════════════════
-   JOINTWORKS — data layer
+   ROBIX — data layer
    Edit this file. Nothing else needs touching for day-to-day changes.
    ══════════════════════════════════════════════════════════════ */
 
@@ -11,13 +11,13 @@
    ───────────────────────────────────────────────────────────── */
 const CONFIG = {
   ENDPOINT: "PASTE_YOUR_ENDPOINT_HERE",
-  FALLBACK_EMAIL: "hello@jointworks.example",
+  FALLBACK_EMAIL: "hello@robix.one",
   DIAG_FEE: 450
 };
 
 /* ─── 2 · SCHEMATICS ────────────────────────────────────────────
    Original line drawings, one per platform class. Joints are the
-   orange dots — they're what breaks and what we're named after.
+   orange dots — they're what breaks, and what we fix.
 
    TO USE REAL PHOTOS instead: put files in assets/img/ and add
    `photo:"assets/img/g1.jpg"` to a platform below. The card will
