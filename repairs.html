@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Repair Catalog — Jointworks</title>
+<meta name="description" content="Every repair we do, what it starts at, and how long it takes — against what a factory replacement costs.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@600;700;800&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+
+<header class="top">
+  <div class="top-in">
+    <a class="brand" href="index.html"><span class="dot"></span>Jointworks</a>
+    <nav class="nav">
+      <a class="lnk" href="platforms.html">Platforms</a>
+      <a class="lnk" href="repairs.html">Repairs</a>
+      <a class="lnk" href="bench.html">The bench</a>
+      <a class="lnk" href="join.html">Work with us</a>
+    </nav>
+    <a class="btn btn-p nav-cta" href="quote.html">Get a quote</a>
+    <button class="burger btn btn-gh" type="button" aria-expanded="false">Menu</button>
+  </div>
+</header>
+
+<div class="phead">
+  <div class="wrap">
+    <span class="lab">Repair catalog</span>
+    <h1>What repairs cost</h1>
+    <p class="lede">Starting prices and turnarounds for every repair we take on. Where a manufacturer only sells a whole assembly, we've put its list price next to ours.</p>
+    <div class="acts">
+      <a class="btn btn-p" href="quote.html">Get a fixed quote</a>
+      <a class="btn btn-gh" href="platforms.html">Browse by platform →</a>
+    </div>
+  </div>
+</div>
+
+<div class="strip">
+  <div class="wrap"><div class="strip-in">
+    <div class="metric"><span class="v">$450</span><span class="k">On-site diagnosis<br>credited to the repair</span></div>
+    <div class="metric"><span class="v">Free</span><span class="k">Diagnosis, if we<br>can't fix it</span></div>
+    <div class="metric"><span class="v">48h</span><span class="k">To on-site diagnosis</span></div>
+    <div class="metric"><span class="v">1–10</span><span class="k">Days, most repairs</span></div>
+  </div></div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="shead">
+      <div><span class="lab">Filter by subsystem</span><h2>Every repair we do</h2></div>
+      <span class="r" id="svcCount">14 services</span>
+    </div>
+    <div class="pills" id="svcPills" role="group" aria-label="Filter repairs by subsystem"></div>
+    <div class="grid c3" id="svcCards"></div>
+  </div>
+</section>
+
+<section class="tight">
+  <div class="wrap">
+    <div class="grid c2">
+      <div class="callout">
+        <h3>Why our number is lower</h3>
+        <p>Manufacturers replace at the module. We repair at the component. A dead finger actuator inside a Dex3-1 hand becomes a $6,500 hand order at the factory — or an actuator, a tendon and a bench afternoon here.</p>
+      </div>
+      <div class="callout">
+        <h3>What "from" actually means</h3>
+        <p>These are starting points, not quotes. Every job gets a fixed written number after the on-site diagnosis, and nothing is ordered or opened until you approve it. We're a new operation and we'll say plainly when something is out of range.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="cta-band">
+  <div class="wrap">
+    <div>
+      <h2>Get a fixed number</h2>
+      <p class="band-copy">Four screens, two minutes. Contact details come last.</p>
+    </div>
+    <div class="acts">
+      <a class="btn btn-p btn-lg" href="quote.html">Open a work order</a>
+    </div>
+  </div>
+</div>
+
+<footer class="btm">
+  <div class="wrap">
+    <div>
+      <p><b>Jointworks</b> — independent humanoid robot diagnosis and repair, San Francisco Bay Area.</p>
+      <p>Not affiliated with, authorised by or endorsed by Unitree Robotics, Booster Robotics or any manufacturer. Product names belong to their owners. Illustrations are original schematics, not manufacturer images.</p>
+      <p>Prices are indicative starting points. Replacement-cost comparisons use public reseller list prices, September 2026.</p>
+    </div>
+    <nav class="fnav">
+      <a href="platforms.html">Platforms</a>
+      <a href="repairs.html">Repairs</a>
+      <a href="bench.html">The bench</a>
+      <a href="quote.html">Get a quote</a>
+      <a href="join.html">Join the bench</a>
+    </nav>
+    <button class="tog" id="tog" type="button">Theme</button>
+  </div>
+</footer>
+
+<script src="assets/data.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>

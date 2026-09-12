@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Get a Quote — Jointworks</title>
+<meta name="description" content="Open a work order. Four screens, two minutes. Fixed written quote after the on-site diagnosis.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@600;700;800&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+
+<header class="top">
+  <div class="top-in">
+    <a class="brand" href="index.html"><span class="dot"></span>Jointworks</a>
+    <nav class="nav">
+      <a class="lnk" href="platforms.html">Platforms</a>
+      <a class="lnk" href="repairs.html">Repairs</a>
+      <a class="lnk" href="bench.html">The bench</a>
+      <a class="lnk" href="join.html">Work with us</a>
+    </nav>
+    <a class="btn btn-p nav-cta" href="quote.html">Get a quote</a>
+    <button class="burger btn btn-gh" type="button" aria-expanded="false">Menu</button>
+  </div>
+</header>
+
+<div class="phead">
+  <div class="wrap">
+    <span class="lab">Work order</span>
+    <h1>Get a quote</h1>
+    <p class="lede">Four short screens. Only six fields are required — fill in what you know and leave the rest. Contact details come last.</p>
+  </div>
+</div>
+
+<section>
+  <div class="wrap split">
+
+    <!-- ── the form ── -->
+    <div class="order">
+      <div class="order-h"><span class="t">Work order · intake</span><span class="id" id="woId">WO-—</span></div>
+      <div class="prog"><i id="p1"></i></div>
+      <div class="dots" id="d1"><span class="on">Robot</span><span>Fault</span><span>Budget</span><span>Contact</span></div>
+      <div class="order-b">
+        <form id="f1" novalidate data-wizard data-dots="d1" data-bar="p1" data-done="dn1"
+              data-key="jw-d1" data-subject="Jointworks work order — robot down">
+          <input type="hidden" name="form_type" value="robot_owner_intake">
+
+          <!-- 1 · robot -->
+          <div class="pane on">
+            <div class="f">
+              <label for="i_model">Platform <span class="req">*</span></label>
+              <select id="i_model" name="platform" required>
+                <option value="">Select…</option>
+                <option>Unitree G1 (base)</option><option>Unitree G1 EDU</option>
+                <option>Unitree G1 Pro</option><option>Unitree R1 / R1 Air</option>
+                <option>Unitree H1</option><option>Unitree H2 / H2 Plus</option>
+                <option>Unitree Go2 / B2</option><option>Booster T1</option>
+                <option>Booster K1</option><option>AgiBot</option><option>Other</option>
+              </select>
+            </div>
+            <div class="g2">
+              <div class="f">
+                <label for="i_hands">End effectors</label>
+                <select id="i_hands" name="end_effectors">
+                  <option value="">—</option><option>None — bare wrists</option>
+                  <option>Dex1-1 gripper</option><option>Dex3-1 hand</option>
+                  <option>Dex5-1 hand</option><option>Third-party</option><option>Not sure</option>
+                </select>
+              </div>
+              <div class="f">
+                <label for="i_bought">Acquired</label>
+                <input type="month" id="i_bought" name="acquired">
+              </div>
+              <div class="f">
+                <label for="i_channel">Bought through</label>
+                <select id="i_channel" name="purchase_channel">
+                  <option value="">—</option><option>Unitree direct</option>
+                  <option>US dealer / reseller</option><option>Overseas reseller</option>
+                  <option>Grant or partnership</option><option>Second-hand</option><option>Not sure</option>
+                </select>
+              </div>
+              <div class="f">
+                <label for="i_hours">Hours of use</label>
+                <select id="i_hours" name="usage_hours">
+                  <option value="">—</option><option>Under 50</option><option>50–200</option>
+                  <option>200–500</option><option>Over 500</option><option>No idea</option>
+                </select>
+              </div>
+            </div>
+            <div class="f">
+              <label for="i_use">Used for</label>
+              <select id="i_use" name="use_case">
+                <option value="">—</option><option>Locomotion / control research</option>
+                <option>Manipulation research</option><option>VLA training &amp; data collection</option>
+                <option>Teaching &amp; coursework</option><option>Demos, events, content</option>
+                <option>Corporate pilot</option><option>Other</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- 2 · fault -->
+          <div class="pane">
+            <div class="f">
+              <span class="fl">Current state <span class="req">*</span></span>
+              <div class="opts">
+                <label class="opt"><input type="radio" name="status" value="Down — unusable" required> Down — unusable</label>
+                <label class="opt"><input type="radio" name="status" value="Degraded — partly usable"> Degraded — partly usable</label>
+                <label class="opt"><input type="radio" name="status" value="Running — preventive"> Running — want preventive service</label>
+              </div>
+            </div>
+            <div class="f">
+              <span class="fl">Symptoms — tick all that apply</span>
+              <div class="opts two">
+                <label class="opt"><input type="checkbox" name="symptoms" value="Won't power on"> Won't power on</label>
+                <label class="opt"><input type="checkbox" name="symptoms" value="Battery won't hold charge"> Battery won't charge</label>
+                <label class="opt"><input type="checkbox" name="symptoms" value="Falls / loses balance"> Falls, loses balance</label>
+                <label class="opt"><input type="checkbox" name="symptoms" value="Joint won't move"> Joint won't move</label>
+                <label class="opt"><input type="checkbox" name="symptoms" value="Joint noise or play"> Joint noise or play</label>
+                <label class="opt"><input type="checkbox" name="symptoms" value="Hand: finger won't actuate"> Finger won't actuate</label>
+                <label class="opt"><input type="checkbox" name="symptoms" value="Hand: no tactile sensing"> Tactile sensing dead</label>
+                <label class="opt"><input type="checkbox" name="symptoms" value="Overheating"> Overheating</label>
+                <label class="opt"><input type="checkbox" name="symptoms" value="Fall damage"> Fall damage</label>
+                <label class="opt"><input type="checkbox" name="symptoms" value="Intermittent"> Intermittent fault</label>
+                <label class="opt"><input type="checkbox" name="symptoms" value="LiDAR / camera"> LiDAR or camera</label>
+                <label class="opt"><input type="checkbox" name="symptoms" value="Won't boot"> Won't boot</label>
+                <label class="opt"><input type="checkbox" name="symptoms" value="SDK / firmware"> SDK or firmware</label>
+                <label class="opt"><input type="checkbox" name="symptoms" value="Other"> Something else</label>
+              </div>
+            </div>
+            <div class="g2">
+              <div class="f">
+                <label for="i_since">Down since</label>
+                <input type="month" id="i_since" name="down_since">
+              </div>
+              <div class="f">
+                <label for="i_disp">What's happened so far</label>
+                <select id="i_disp" name="disposition">
+                  <option value="">—</option><option>Nothing — it's sitting</option>
+                  <option>Tried fixing it ourselves</option><option>Shipped to factory, waiting</option>
+                  <option>Got a quote, declined it</option><option>Written off internally</option><option>Other</option>
+                </select>
+              </div>
+            </div>
+            <div class="f">
+              <label for="i_detail">In your own words</label>
+              <span class="hint">Paste error codes and log lines raw — they're the most useful thing you can give us.</span>
+              <textarea id="i_detail" name="fault_description" placeholder="Left ankle started clicking after a fall in July, now it faults out under load…"></textarea>
+            </div>
+          </div>
+
+          <!-- 3 · budget -->
+          <div class="pane">
+            <div class="f">
+              <span class="fl">Running again inside a week — what could you approve without a long process?</span>
+              <div class="tiles">
+                <label class="tile"><input type="radio" name="budget_band" value="Up to $1,500"><span class="a">$1.5k</span><span class="s">up to</span></label>
+                <label class="tile"><input type="radio" name="budget_band" value="Up to $3,000"><span class="a">$3k</span><span class="s">up to</span></label>
+                <label class="tile"><input type="radio" name="budget_band" value="Up to $5,000"><span class="a">$5k</span><span class="s">up to</span></label>
+                <label class="tile"><input type="radio" name="budget_band" value="Diagnose first"><span class="a">?</span><span class="s">diagnose first</span></label>
+              </div>
+            </div>
+            <div class="g2">
+              <div class="f">
+                <label for="i_signer">Who signs off</label>
+                <select id="i_signer" name="approver">
+                  <option value="">—</option><option>I can approve it</option><option>My PI or manager</option>
+                  <option>Department / facilities</option><option>Procurement</option><option>Not sure</option>
+                </select>
+              </div>
+              <div class="f">
+                <label for="i_po">PO or vendor onboarding</label>
+                <select id="i_po" name="procurement">
+                  <option value="">—</option><option>Card or invoice is fine</option>
+                  <option>PO required</option><option>Full vendor onboarding</option><option>Not sure</option>
+                </select>
+              </div>
+            </div>
+            <div class="f">
+              <span class="fl">Anything else</span>
+              <div class="opts">
+                <label class="opt"><input type="checkbox" name="consent" value="Happy to be a reference"> Happy to be a reference if this goes well</label>
+                <label class="opt"><input type="checkbox" name="consent" value="Fault data may be used anonymously"> You may keep this fault data anonymously</label>
+                <label class="opt"><input type="checkbox" name="consent" value="Other humanoids on site"> There are other humanoids on site</label>
+              </div>
+            </div>
+          </div>
+
+          <!-- 4 · contact -->
+          <div class="pane">
+            <div class="g2">
+              <div class="f"><label for="i_name">Name <span class="req">*</span></label>
+                <input type="text" id="i_name" name="name" autocomplete="name" required></div>
+              <div class="f"><label for="i_org">Lab, dept or company <span class="req">*</span></label>
+                <input type="text" id="i_org" name="organization" autocomplete="organization" required></div>
+              <div class="f"><label for="i_email">Email <span class="req">*</span></label>
+                <input type="email" id="i_email" name="email" autocomplete="email" required></div>
+              <div class="f"><label for="i_phone">Phone</label>
+                <input type="tel" id="i_phone" name="phone" autocomplete="tel"></div>
+              <div class="f"><label for="i_city">City <span class="req">*</span></label>
+                <input type="text" id="i_city" name="city" placeholder="Palo Alto, Berkeley…" required></div>
+              <div class="f"><label for="i_access">Building access</label>
+                <select id="i_access" name="site_access">
+                  <option value="">—</option><option>Walk-in</option><option>Escort / badge required</option>
+                  <option>Advance approval or NDA</option><option>Not sure</option>
+                </select></div>
+            </div>
+          </div>
+
+          <div class="nav-row">
+            <button class="btn" type="button" data-back hidden>← Back</button>
+            <span class="sp"></span>
+            <span class="micro" data-fine>Nothing is charged until you approve a written quote.</span>
+            <button class="btn btn-p" type="button" data-next>Next →</button>
+            <button class="btn btn-p btn-lg" type="submit" hidden>Submit work order</button>
+          </div>
+          <p class="saved"></p>
+          <div class="err"></div>
+        </form>
+
+        <div class="done" id="dn1">
+          <p class="mk">Work order received</p>
+          <p>We'll reply within one business day to book the on-site diagnosis. If it's urgent, reply to the confirmation email and say so.</p>
+          <a class="btn" href="index.html">Back to home</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── sidebar ── -->
+    <div class="stack">
+      <div class="vs">
+        <div class="vsr">
+          <span class="who"><b>Factory route</b>Freight, customs, blind diagnosis</span>
+          <span class="t">8 wks</span>
+        </div>
+        <div class="vsr">
+          <span class="who"><b>Our route</b>On site, diagnosed, repaired locally</span>
+          <span class="t">5 days</span>
+        </div>
+        <div class="vs-foot">$450 on-site diagnosis, credited in full against the repair. Free if we can't fix it.</div>
+      </div>
+
+      <div class="callout">
+        <h3>What happens after you submit</h3>
+        <p class="micro">
+          <b>Within 1 business day</b> — we reply and book a slot.<br>
+          <b>Within 48 hours</b> — an engineer diagnoses on site, pulls logs and error codes.<br>
+          <b>Same day as diagnosis</b> — you get one fixed number and one date.<br>
+          <b>Only then</b> — parts get ordered and panels get opened.
+        </p>
+      </div>
+
+      <div class="callout">
+        <h3>Fleet of three or more?</h3>
+        <p>Say so in the last screen. A site audit usually costs less than three separate call-outs and finds the faults you haven't noticed yet.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer class="btm">
+  <div class="wrap">
+    <div>
+      <p><b>Jointworks</b> — independent humanoid robot diagnosis and repair, San Francisco Bay Area.</p>
+      <p>Not affiliated with, authorised by or endorsed by Unitree Robotics, Booster Robotics or any manufacturer. Product names belong to their owners.</p>
+      <p>Prices are indicative starting points. Replacement-cost comparisons use public reseller list prices, September 2026.</p>
+    </div>
+    <nav class="fnav">
+      <a href="platforms.html">Platforms</a>
+      <a href="repairs.html">Repairs</a>
+      <a href="bench.html">The bench</a>
+      <a href="quote.html">Get a quote</a>
+      <a href="join.html">Join the bench</a>
+    </nav>
+    <button class="tog" id="tog" type="button">Theme</button>
+  </div>
+</footer>
+
+<script src="assets/data.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>

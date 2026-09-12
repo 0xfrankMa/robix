@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jointworks — Humanoid Robot Repair, SF Bay Area</title>
+<meta name="description" content="Local diagnosis and repair for humanoid robots. On-site in 48 hours, fixed written quote, most repairs inside a week.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@600;700;800&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+
+<header class="top">
+  <div class="top-in">
+    <a class="brand" href="index.html"><span class="dot"></span>Jointworks</a>
+    <nav class="nav">
+      <a class="lnk" href="platforms.html">Platforms</a>
+      <a class="lnk" href="repairs.html">Repairs</a>
+      <a class="lnk" href="bench.html">The bench</a>
+      <a class="lnk" href="join.html">Work with us</a>
+    </nav>
+    <a class="btn btn-p nav-cta" href="quote.html">Get a quote</a>
+    <button class="burger btn btn-gh" type="button" aria-expanded="false">Menu</button>
+  </div>
+</header>
+
+<!-- ═══ HERO ═══ -->
+<div class="phead">
+  <div class="wrap hero-split">
+    <div>
+      <span class="lab">Humanoid robot service · SF Bay Area</span>
+      <h1>Broken humanoid?<br>Fixed here, not shipped back.</h1>
+      <p class="lede">On-site diagnosis in 48 hours. Fixed written quote before anyone opens a panel. Most repairs done inside a week.</p>
+
+      <div class="finder hero-finder">
+        <span class="fl">Find your repair</span>
+        <select id="findPlatform" aria-label="Which robot do you have">
+          <option value="">Which robot do you have?</option>
+          <option value="g1">Unitree G1 / G1 EDU / G1 Pro</option>
+          <option value="r1">Unitree R1 / R1 Air</option>
+          <option value="h2">Unitree H1 / H2</option>
+          <option value="quad">Unitree Go2 / B2</option>
+          <option value="booster">Booster T1 / K1</option>
+          <option value="other">Something else</option>
+        </select>
+        <select id="findFault" aria-label="What is it doing">
+          <option value="">What's it doing?</option>
+          <option value="hand">Hand or gripper fault</option>
+          <option value="joint">Joint won't move / noisy</option>
+          <option value="fall">Fell over, physical damage</option>
+          <option value="power">Won't power on / battery</option>
+          <option value="sensor">LiDAR, camera, calibration</option>
+          <option value="compute">Won't boot / SDK</option>
+          <option value="">Not sure</option>
+        </select>
+        <button class="btn btn-p" id="findGo" type="button">Get a quote →</button>
+      </div>
+    </div>
+
+    <div class="vs">
+      <div class="vsr">
+        <span class="who"><b>Ship it to the factory</b>Freight both ways, customs, blind diagnosis</span>
+        <span class="t">8 wks</span>
+      </div>
+      <div class="vsr">
+        <span class="who"><b>Bench it with us</b>Diagnosed on site, repaired locally</span>
+        <span class="t">5 days</span>
+      </div>
+      <div class="vs-foot">$450 on-site diagnosis, credited in full against the repair. Free if we can't fix it.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ METRICS ═══ -->
+<div class="strip">
+  <div class="wrap"><div class="strip-in">
+    <div class="metric"><span class="v">48h</span><span class="k">To on-site diagnosis</span></div>
+    <div class="metric"><span class="v">$1,200</span><span class="k">Typical hand repair<br>vs $6,500 replacement</span></div>
+    <div class="metric"><span class="v">12</span><span class="k">Platforms &amp; parts<br>serviced</span></div>
+    <div class="metric"><span class="v">7</span><span class="k">Bay Area zones</span></div>
+  </div></div>
+</div>
+
+<!-- ═══ FEATURED PLATFORMS ═══ -->
+<section>
+  <div class="wrap">
+    <div class="shead">
+      <div><span class="lab">Platforms</span><h2>What we work on</h2></div>
+      <a class="btn btn-gh r" href="platforms.html">All 12 platforms &amp; parts →</a>
+    </div>
+    <div class="grid c4" id="platFeatured"></div>
+  </div>
+</section>
+
+<!-- ═══ THE GAP ═══ -->
+<section class="tight">
+  <div class="wrap">
+    <div class="grid c2">
+      <div class="callout">
+        <h3>A dead robot is almost never beyond repair</h3>
+        <p>It's beyond reach. Nobody local touches humanoids, the factory is eight weeks away, joint modules aren't sold on any public shelf, and the only quote anyone got was for a whole new assembly.</p>
+      </div>
+      <div class="callout">
+        <h3>One finger actuator shouldn't cost $6,500</h3>
+        <p>A dexterous hand is sold as one replaceable unit. Inside it are actuators, tendons, flex circuits and tactile sensors — each repairable on a bench, by someone with the skills.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FLOW ═══ -->
+<section>
+  <div class="wrap">
+    <div class="shead"><div><span class="lab">Process</span><h2>How a job runs</h2></div></div>
+    <div class="flow">
+      <div><span class="n">01</span><h3>Tell us what you have</h3><p>Four short screens. Two minutes.</p></div>
+      <div><span class="n">02</span><h3>On-site diagnosis</h3><p>Within 48 hours. $450, credited to the repair.</p></div>
+      <div><span class="n">03</span><h3>Fixed written quote</h3><p>One number, one date. You approve before any work.</p></div>
+      <div><span class="n">04</span><h3>Running again</h3><p>Plus a written failure report and what to watch next.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ COVERAGE ═══ -->
+<section>
+  <div class="wrap">
+    <div class="shead">
+      <div><span class="lab">Coverage</span><h2>Where we come to you</h2></div>
+      <a class="btn btn-gh r" href="bench.html">Coverage &amp; the bench →</a>
+    </div>
+    <div class="board" id="board"></div>
+  </div>
+</section>
+
+<!-- ═══ CTA BAND ═══ -->
+<div class="cta-band">
+  <div class="wrap">
+    <div>
+      <h2>Two ways in</h2>
+      <p class="band-copy">Own a robot that's down, or repair hardware for a living. Both start here.</p>
+    </div>
+    <div class="acts">
+      <a class="btn btn-p btn-lg" href="quote.html">Open a work order</a>
+      <a class="btn btn-lg" href="join.html">Join the bench</a>
+    </div>
+  </div>
+</div>
+
+<footer class="btm">
+  <div class="wrap">
+    <div>
+      <p><b>Jointworks</b> — independent humanoid robot diagnosis and repair, San Francisco Bay Area.</p>
+      <p>Not affiliated with, authorised by or endorsed by Unitree Robotics, Booster Robotics or any manufacturer. Product names belong to their owners. Illustrations are original schematics, not manufacturer images.</p>
+      <p>Prices are indicative starting points. Replacement-cost comparisons use public reseller list prices, September 2026.</p>
+    </div>
+    <nav class="fnav">
+      <a href="platforms.html">Platforms</a>
+      <a href="repairs.html">Repairs</a>
+      <a href="bench.html">The bench</a>
+      <a href="quote.html">Get a quote</a>
+      <a href="join.html">Join the bench</a>
+    </nav>
+    <button class="tog" id="tog" type="button">Theme</button>
+  </div>
+</footer>
+
+<script src="assets/data.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>
