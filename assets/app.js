@@ -348,6 +348,10 @@ function wizard(form){
     send.disabled = true;
     const lbl = send.textContent;
     send.textContent = "Sending…";
+    /* Both wizards post to the same endpoint. Send the per-form subject so a
+       work order and a bench application are distinguishable in the inbox.
+       Added here, not in `data` above, to keep the mailto fallback body clean. */
+    if(form.dataset.subject) data._subject = form.dataset.subject;
     fetch(CONFIG.ENDPOINT, {
       method: "POST",
       headers: {"Content-Type":"application/json", Accept:"application/json"},
