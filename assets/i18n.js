@@ -24,6 +24,7 @@ const I18N = { en: {
   "nav.facility": "Facilities",
   "nav.security": "Data handling",
   "nav.company":  "Company",
+  "nav.repair":   "Repair",
   "nav.cta":      "Contact us",
   "nav.contact":  "Contact",
   "nav.privacy":  "Privacy policy",
