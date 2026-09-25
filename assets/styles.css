@@ -501,7 +501,12 @@ footer.btm b{color:var(--ink)}
   min-height:76px;display:grid;place-items:center;padding:var(--s3) var(--s4);text-align:center}
 .logo span{font-family:var(--disp);font-weight:700;font-size:1.15rem;letter-spacing:.03em;
   text-transform:uppercase;color:var(--ink-3);line-height:1.1}
-.logo img{max-height:30px;max-width:130px;filter:grayscale(1);opacity:.7}
+/* every mark rendered as the same flat grey, whatever its brand colours */
+.logo img{display:block;max-height:30px;max-width:118px;width:auto;height:auto;
+  filter:brightness(0);opacity:.5;transition:opacity .15s}
+.logo:hover img{opacity:.8}
+:root[data-theme="dark"] .logo img{filter:brightness(0) invert(1);opacity:.6}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .logo img{filter:brightness(0) invert(1);opacity:.6}}
 .logos.edu{grid-template-columns:repeat(auto-fill,minmax(172px,1fr))}
 .logos.edu .logo span{font-family:var(--body);text-transform:none;font-weight:600;
   font-size:.98rem;letter-spacing:0}

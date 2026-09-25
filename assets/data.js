@@ -403,25 +403,26 @@ const BENCH = [
 
 /* ─── 7 · WHO WE'VE WORKED WITH ─────────────────────────────────
    Real working relationships only — every name here was confirmed.
-   Add `img:"assets/logos/unitree.svg"` once you have the official
-   file from the company (getting it from them doubles as permission).
-   Universities stay as text: their marks are not ours to use.
+   `img` files come from each company's own site via tools/prep-logos.py
+   (English line only; bilingual lockups lose the Chinese second line).
+   No img → the name is shown as text (Astribot: its site only has a
+   Chinese wordmark). Universities stay as text: their marks are not ours.
    ───────────────────────────────────────────────────────────── */
 const LOGOS = [
-  {kind:"co", name:"Unitree"},
-  {kind:"co", name:"AgiBot"},
-  {kind:"co", name:"Galbot"},
-  {kind:"co", name:"Fourier"},
-  {kind:"co", name:"Booster Robotics"},
-  {kind:"co", name:"Galaxea"},
+  {kind:"co", name:"Unitree", img:"assets/logos/unitree.svg"},
+  {kind:"co", name:"AgiBot", img:"assets/logos/agibot.png"},
+  {kind:"co", name:"Galbot", img:"assets/logos/galbot.svg"},
+  {kind:"co", name:"Fourier", img:"assets/logos/fourier.png"},
+  {kind:"co", name:"Booster Robotics", img:"assets/logos/booster.svg"},
+  {kind:"co", name:"Galaxea", img:"assets/logos/galaxea.png"},
   {kind:"co", name:"Astribot"},
-  {kind:"co", name:"Robotera"},
-  {kind:"co", name:"LimX Dynamics"},
-  {kind:"co", name:"Deep Robotics"},
-  {kind:"co", name:"Spirit AI"},
-  {kind:"co", name:"X Square Robot"},
-  {kind:"co", name:"AgileX Robotics"},
-  {kind:"co", name:"Kepler"},
+  {kind:"co", name:"Robotera", img:"assets/logos/robotera.png"},
+  {kind:"co", name:"LimX Dynamics", img:"assets/logos/limx.svg"},
+  {kind:"co", name:"Deep Robotics", img:"assets/logos/deeprobotics.png"},
+  {kind:"co", name:"Spirit AI", img:"assets/logos/spiritai.svg"},
+  {kind:"co", name:"X Square Robot", img:"assets/logos/xsquare.svg"},
+  {kind:"co", name:"AgileX Robotics", img:"assets/logos/agilex.png"},
+  {kind:"co", name:"Kepler", img:"assets/logos/kepler.png"},
   {kind:"edu", name:"Stanford University"},
   {kind:"edu", name:"UC Berkeley"},
   {kind:"edu", name:"Carnegie Mellon University"},
