@@ -395,3 +395,62 @@ const BENCH = [
    s:["Boot recovery","Firmware flashing","ROS 2 / SDK","Sensor calibration"],
    zone:"Bay-wide · remote", live:true}
 ];
+
+/* ══════════════════════════════════════════════════════════════
+   DATA COLLECTION SITE (index, service, facility …)
+   Blocks 1–6 above drive the repair sub-site; 7–8 drive the main site.
+   ══════════════════════════════════════════════════════════════ */
+
+/* ─── 7 · WHO WE'VE WORKED WITH ─────────────────────────────────
+   Real working relationships only — every name here was confirmed.
+   Add `img:"assets/logos/unitree.svg"` once you have the official
+   file from the company (getting it from them doubles as permission).
+   Universities stay as text: their marks are not ours to use.
+   ───────────────────────────────────────────────────────────── */
+const LOGOS = [
+  {kind:"co", name:"Unitree"},
+  {kind:"co", name:"AgiBot"},
+  {kind:"co", name:"Galbot"},
+  {kind:"co", name:"Fourier"},
+  {kind:"co", name:"Booster Robotics"},
+  {kind:"co", name:"Galaxea"},
+  {kind:"co", name:"Astribot"},
+  {kind:"co", name:"Robotera"},
+  {kind:"co", name:"LimX Dynamics"},
+  {kind:"co", name:"Deep Robotics"},
+  {kind:"co", name:"Spirit AI"},
+  {kind:"co", name:"X Square Robot"},
+  {kind:"co", name:"AgileX Robotics"},
+  {kind:"co", name:"Kepler"},
+  {kind:"edu", name:"Stanford University"},
+  {kind:"edu", name:"UC Berkeley"},
+  {kind:"edu", name:"Carnegie Mellon University"},
+  {kind:"edu", name:"Tsinghua University"},
+  {kind:"edu", name:"Peking University"},
+  {kind:"edu", name:"Zhejiang University"}
+];
+
+/* ─── 8 · SCENES & PHOTOS ───────────────────────────────────────
+   Captions name the scene type, never the place. English captions
+   live in i18n.js under scene.<key>. Photos come from
+   tools/prep-media.py — re-run it rather than dropping raw files in.
+   ───────────────────────────────────────────────────────────── */
+const SCENES = {
+  hotel:     "ホテル・客室",
+  warehouse: "倉庫・物流",
+  care:      "医療・介護",
+  home:      "家事・生活空間",
+  retail:    "小売・陳列",
+  assembly:  "組立・工程作業"
+};
+const GALLERY = [
+  {set:"wild", img:"wild-hotel-closet",    scene:"hotel"},
+  {set:"wild", img:"wild-warehouse-boxes", scene:"warehouse"},
+  {set:"wild", img:"wild-care-bed",        scene:"care"},
+  {set:"wild", img:"wild-window",          scene:"home"},
+  {set:"wild", img:"wild-warehouse-plush", scene:"warehouse"},
+  {set:"wild", img:"wild-hotel-bed",       scene:"hotel"},
+  {set:"site", img:"facility-arms",        scene:"assembly"},
+  {set:"site", img:"facility-home",        scene:"home"},
+  {set:"site", img:"facility-retail",      scene:"retail"}
+];

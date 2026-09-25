@@ -1,22 +1,68 @@
-# Robix — site v2
+# Robix — site v3
 
-Managed marketplace for humanoid robot repair, SF Bay Area. Six pages, no build step,
-no dependencies. Drag the folder onto any static host.
+Real-world robot learning data collection, for buyers in Japan. Japanese by default with
+a one-click English switch. The old Bay Area repair site lives on as a sub-site, linked
+from the footer. No build step, no dependencies. Drag the folder onto any static host.
+
+Design: `docs/superpowers/specs/2026-09-25-robix-data-collection-japan-design.md`
 
 ```
-index.html       Home — hero, finder, featured platforms, coverage
-platforms.html   All 8 platforms + 4 component classes, with schematics & specs
-repairs.html     Filterable repair catalog, 14 services
-bench.html       Coverage board + capability groups + who we recruit
-quote.html       Work order — 4-step wizard
-join.html        Bench roster — 3-step wizard
+index.html       Home — hero, partner wall, in-the-wild gallery, methods, phases, pledges
+service.html     Capture kits, scenes, deliverables, QC, process
+facility.html    Facilities we run + the Japan site (in preparation) + early partners
+security.html    The six data-handling commitments
+company.html     Company facts and team
+privacy.html     Contact-form privacy policy (discloses Formspree / US)
+contact.html     Inquiry — 3-step wizard (form_type=data_inquiry, records lang)
+
+repair.html      ┐
+platforms.html   │
+repairs.html     │ Robix Repair sub-site — English only, unchanged apart from
+bench.html       │ its brand link and a "← Robix data collection" footer link
+quote.html       │
+join.html        ┘
+
 assets/
-  data.js        ← the only file you edit day to day
-  app.js         renderers, wizard, theme, nav
+  i18n.js        English strings for the bilingual pages (Japanese is in the HTML)
+  data.js        LOGOS + SCENES + GALLERY for the main site; repair data below
+  app.js         i18n, renderers, wizard, theme, nav
   styles.css     design system
+  img/, video/   processed media — generate with tools/prep-media.py
+tools/
+  check-i18n.js  node tools/check-i18n.js — fails if any key lacks English
+  prep-media.py  crops/blurs signage, compresses photos, cuts the teleop clip
 ```
+
+## Editing copy
+
+- **Japanese**: edit the text in the HTML directly.
+- **English**: edit `assets/i18n.js` under the same `data-i18n` key. Run
+  `node tools/check-i18n.js` after adding any new `data-i18n` attribute.
+- `?lang=en` on any URL opens the English version — use it in English emails.
+
+## Rules for this site (from the design)
+
+- Never say or imply we already have a site in Japan. Photo captions name the scene
+  type, never the place.
+- Data-handling commitments are exactly the six on `security.html`. Nothing else
+  (no ISO 27001) until it's true.
+- Partner names: only real, confirmed collaborations. Universities stay as text.
+  To swap a company name for its logo, add `img:"assets/logos/<name>.svg"` in `LOGOS`
+  — ideally a file the company sent you, which doubles as permission.
+- New photos go through `tools/prep-media.py` and get checked by eye for readable
+  signage before they ship.
+
+## Waiting on
+
+- Japan contact (name, title, email) — slot is commented out in `company.html`
+- Japan site timeline — `facility.html` says details will follow
+- Contracting entity / company facts for `company.html`
+- Japanese copy review by a native speaker before sharing the link
 
 ---
+
+# Robix Repair sub-site (v2 notes)
+
 
 ## Go live
 
@@ -87,7 +133,7 @@ Drafts autosave to `localStorage` and restore on return, so a closed tab doesn't
 - [ ] Wire `ENDPOINT`, submit both forms end to end
 - [ ] Buy the domain
 - [ ] Confirm **$450** is the diagnosis fee you want (`CONFIG.DIAG_FEE`, and the copy in
-      `index.html`, `repairs.html`, `quote.html`). High enough to filter tyre-kickers, low
+      `repair.html`, `repairs.html`, `quote.html`). High enough to filter tyre-kickers, low
       enough to skip approval at most labs — but it's my guess, not your decision.
 - [ ] Sanity-check every `from` price in `SERVICES` against what you'd actually quote
 - [ ] Add a privacy page — the consent checkbox already asks to keep fault data

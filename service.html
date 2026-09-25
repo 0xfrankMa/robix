@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title data-i18n="t.service">サービス — Robix</title>
+<meta name="description" data-i18n-content="d.service" content="装着型デバイスと実機テレオペレーションによるロボット学習データの採集。採集方法、対応シーン、納品形式、品質管理。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@600;700;800&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Noto+Sans+JP:wght@400;500;700;800&display=swap">
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+
+<header class="top">
+  <div class="top-in">
+    <a class="brand" href="index.html"><span class="dot"></span>Robix</a>
+    <nav class="nav">
+      <a class="lnk" href="service.html" data-i18n="nav.service">サービス</a>
+      <a class="lnk" href="facility.html" data-i18n="nav.facility">採集拠点</a>
+      <a class="lnk" href="security.html" data-i18n="nav.security">データの取り扱い</a>
+      <a class="lnk" href="company.html" data-i18n="nav.company">会社概要</a>
+      <a class="lnk lnk-m" href="contact.html" data-i18n="nav.cta">ご相談</a>
+    </nav>
+    <div class="lang" role="group" aria-label="Language"><button type="button" data-lang="ja" aria-pressed="true">JA</button><button type="button" data-lang="en" aria-pressed="false">EN</button></div>
+    <a class="btn btn-p nav-cta" href="contact.html" data-i18n="nav.cta">ご相談</a>
+    <button class="burger btn btn-gh" type="button" aria-expanded="false">メニュー</button>
+  </div>
+</header>
+
+<div class="phead">
+  <div class="wrap">
+    <span class="lab" data-i18n="nav.service">サービス</span>
+    <h1 data-i18n="sv.h1">実環境データを、採集から納品まで</h1>
+    <p class="lede" data-i18n="sv.lede">装着型デバイスによる人の作業の記録と、実機テレオペレーション。目的と対象機種に合わせて組み合わせ、学習にそのまま使える形式で納品します。</p>
+  </div>
+</div>
+
+<!-- ═══ CAPTURE KITS ═══ -->
+<section>
+  <div class="wrap">
+    <div class="shead"><div><span class="lab" data-i18n="m.lab">採集方法</span>
+      <h2 data-i18n="sv.kit.h2">採集方法と取得データ</h2></div></div>
+    <div class="grid c4">
+      <div class="bcard"><h3 data-i18n="sv.k1h">一人称視点ヘッドセット</h3>
+        <p class="dim" data-i18n="sv.k1p">頭部・手首カメラで、作業者の視点と手元を同期して記録します。</p>
+        <div class="chips"><span class="mini" data-i18n="sv.rgb">RGB映像</span><span class="mini" data-i18n="sv.depth">深度</span><span class="mini">IMU</span><span class="mini" data-i18n="sv.hand">手の姿勢</span></div></div>
+      <div class="bcard"><h3 data-i18n="sv.k2h">UMI型ハンドヘルドグリッパー</h3>
+        <p class="dim" data-i18n="sv.k2p">ロボットと同じ把持具を人が持って作業し、そのまま学習に使える軌跡を取得します。</p>
+        <div class="chips"><span class="mini" data-i18n="sv.wrist">手首カメラ</span><span class="mini" data-i18n="sv.pose">6DoF姿勢</span><span class="mini" data-i18n="sv.grip">開閉幅</span></div></div>
+      <div class="bcard"><h3 data-i18n="sv.k3h">データグローブ・モーションキャプチャ</h3>
+        <p class="dim" data-i18n="sv.k3p">指の関節角や全身の動きを計測し、巧緻な操作や全身動作の学習に使います。</p>
+        <div class="chips"><span class="mini" data-i18n="sv.finger">指関節角</span><span class="mini" data-i18n="sv.body">全身姿勢</span><span class="mini" data-i18n="sv.tactile">触覚（対応機材）</span></div></div>
+      <div class="bcard"><h3 data-i18n="m.2h">実機テレオペレーション</h3>
+        <p class="dim" data-i18n="sv.k4p">ヒューマノイドやアームを遠隔操作し、対象機体そのもののデータを取得します。</p>
+        <div class="chips"><span class="mini" data-i18n="sv.joint">関節状態</span><span class="mini" data-i18n="sv.ee">エンドエフェクタ</span><span class="mini" data-i18n="sv.multicam">マルチカメラ</span><span class="mini" data-i18n="sv.action">操作指令</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SCENES ═══ -->
+<section>
+  <div class="wrap">
+    <div class="shead"><div><span class="lab" data-i18n="sv.sc.lab">対応シーン</span>
+      <h2 data-i18n="sv.sc.h2">現場の種類を問わず採集します</h2></div></div>
+    <div class="gallery wide" data-gallery="wild"></div>
+    <p class="micro note-wide" data-i18n="sv.sc.note">上記以外のシーン（厨房・飲食、製造ライン、家庭など）もご相談ください。</p>
+  </div>
+</section>
+
+<!-- ═══ DELIVERABLES + QC ═══ -->
+<section>
+  <div class="wrap">
+    <div class="grid two">
+      <div>
+        <div class="shead"><div><span class="lab" data-i18n="sv.dl.lab">納品物</span>
+          <h2 data-i18n="sv.dl.h2">納品形式</h2></div></div>
+        <div class="chips">
+          <span class="badge acc">LeRobot</span><span class="badge acc">RLDS</span>
+          <span class="badge acc">HDF5</span><span class="badge acc" data-i18n="sv.dl.custom">カスタム形式</span>
+        </div>
+        <div class="method-list prose">
+          <ul>
+            <li data-i18n="sv.dl.1">時刻同期済みのマルチカメラ映像とセンサーデータ</li>
+            <li data-i18n="sv.dl.2">タスク・サブタスクの区切りと成功／失敗ラベル</li>
+            <li data-i18n="sv.dl.3">シーン・機材構成・採集条件のメタデータ</li>
+            <li data-i18n="sv.dl.4">ご要望に応じたアノテーション（言語指示、物体、接触など）</li>
+          </ul>
+        </div>
+      </div>
+      <div>
+        <div class="shead"><div><span class="lab" data-i18n="sv.qc.lab">品質管理</span>
+          <h2 data-i18n="sv.qc.h2">品質を仕組みで担保する</h2></div></div>
+        <div class="prose">
+          <ul>
+            <li data-i18n="sv.qc.1">パイロット採集で採集手順と合格基準を事前に合意</li>
+            <li data-i18n="sv.qc.2">機材キャリブレーションの定期確認</li>
+            <li data-i18n="sv.qc.3">全エピソードの自動チェックと抜き取りによる目視確認</li>
+            <li data-i18n="sv.qc.4">基準を満たさないエピソードは再採集</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ PROCESS ═══ -->
+<section>
+  <div class="wrap">
+    <div class="shead"><div><span class="lab" data-i18n="fl.lab">進め方</span>
+      <h2 data-i18n="fl.h2">ご相談から納品まで</h2></div></div>
+    <div class="flow">
+      <div><span class="n">01</span><h3 data-i18n="fl.1h">ヒアリング</h3><p data-i18n="fl.1p">用途・タスク・対象機種・必要量を伺い、採集方法をご提案します。</p></div>
+      <div><span class="n">02</span><h3 data-i18n="fl.2h">パイロット採集</h3><p data-i18n="fl.2p">少量を採集し、データ形式・品質・アノテーションをすり合わせます。</p></div>
+      <div><span class="n">03</span><h3 data-i18n="fl.3h">本採集</h3><p data-i18n="fl.3p">合意した手順と品質基準で、規模を拡大して採集します。</p></div>
+      <div><span class="n">04</span><h3 data-i18n="fl.4h">納品</h3><p data-i18n="fl.4p">LeRobot・RLDS・HDF5など、ご指定の形式でメタデータとともに納品します。</p></div>
+    </div>
+  </div>
+</section>
+
+<div class="cta-band">
+  <div class="wrap">
+    <div>
+      <h2 data-i18n="cta.h2">まずはパイロットから</h2>
+      <p class="band-copy" data-i18n="cta.p">用途と条件を伺ったうえで、採集方法と進め方をご提案します。NDA締結後のご相談も可能です。</p>
+    </div>
+    <div class="acts"><a class="btn btn-p btn-lg" href="contact.html" data-i18n="cta.btn">ご相談フォーム</a></div>
+  </div>
+</div>
+
+<footer class="btm">
+  <div class="wrap">
+    <div>
+      <p><b>Robix</b> — <span data-i18n="foot.tag">実環境ロボット学習データの採集サービス</span></p>
+      <p data-i18n="foot.tm">掲載している企業名・校名は協業実績を示すもので、各権利者の商標または登録商標です。</p>
+      <p><a class="subbrand" href="repair.html" data-i18n="foot.repair">Robix Repair — 米国ベイエリアでのロボット保守 →</a></p>
+    </div>
+    <nav class="fnav">
+      <a href="service.html" data-i18n="nav.service">サービス</a>
+      <a href="facility.html" data-i18n="nav.facility">採集拠点</a>
+      <a href="security.html" data-i18n="nav.security">データの取り扱い</a>
+      <a href="company.html" data-i18n="nav.company">会社概要</a>
+      <a href="contact.html" data-i18n="nav.contact">お問い合わせ</a>
+      <a href="privacy.html" data-i18n="nav.privacy">プライバシーポリシー</a>
+    </nav>
+    <button class="tog" id="tog" type="button">Theme</button>
+  </div>
+</footer>
+
+<script src="assets/data.js"></script>
+<script src="assets/i18n.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>

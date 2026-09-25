@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title data-i18n="t.contact">ご相談 — Robix</title>
+<meta name="description" data-i18n-content="d.contact" content="データ採集のご相談フォーム。3つのステップで、2営業日以内にご連絡します。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@600;700;800&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Noto+Sans+JP:wght@400;500;700;800&display=swap">
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+
+<header class="top">
+  <div class="top-in">
+    <a class="brand" href="index.html"><span class="dot"></span>Robix</a>
+    <nav class="nav">
+      <a class="lnk" href="service.html" data-i18n="nav.service">サービス</a>
+      <a class="lnk" href="facility.html" data-i18n="nav.facility">採集拠点</a>
+      <a class="lnk" href="security.html" data-i18n="nav.security">データの取り扱い</a>
+      <a class="lnk" href="company.html" data-i18n="nav.company">会社概要</a>
+      <a class="lnk lnk-m" href="contact.html" data-i18n="nav.cta">ご相談</a>
+    </nav>
+    <div class="lang" role="group" aria-label="Language"><button type="button" data-lang="ja" aria-pressed="true">JA</button><button type="button" data-lang="en" aria-pressed="false">EN</button></div>
+    <a class="btn btn-p nav-cta" href="contact.html" data-i18n="nav.cta">ご相談</a>
+    <button class="burger btn btn-gh" type="button" aria-expanded="false">メニュー</button>
+  </div>
+</header>
+
+<div class="phead">
+  <div class="wrap">
+    <span class="lab" data-i18n="nav.contact">お問い合わせ</span>
+    <h1 data-i18n="ct.h1">データ採集のご相談</h1>
+    <p class="lede" data-i18n="ct.lede">3つの短いステップです。未定の項目は「未定」のままで構いません。担当者より2営業日以内にご連絡します。</p>
+  </div>
+</div>
+
+<section>
+  <div class="wrap split">
+
+    <div class="order">
+      <div class="order-h"><span class="t" data-i18n="ct.formt">ご相談フォーム</span></div>
+      <div class="prog"><i id="p1"></i></div>
+      <div class="dots" id="d1"><span class="on" data-i18n="ct.s1">データ要件</span><span data-i18n="ct.s2">規模・時期</span><span data-i18n="ct.s3">ご連絡先</span></div>
+      <div class="order-b">
+        <form id="f1" novalidate data-wizard data-dots="d1" data-bar="p1" data-done="dn1"
+              data-key="rbx-inq" data-subject="Robix — data collection inquiry">
+          <input type="hidden" name="form_type" value="data_inquiry">
+          <input type="hidden" name="lang" value="ja">
+
+          <!-- 1 · requirements -->
+          <div class="pane on">
+            <div class="f">
+              <span class="fl"><span data-i18n="ct.use">用途</span> <span class="req">*</span></span>
+              <div class="opts two">
+                <label class="opt"><input type="radio" name="use" value="VLA / foundation model pre-training" required> <span data-i18n="ct.use1">VLA・基盤モデルの事前学習</span></label>
+                <label class="opt"><input type="radio" name="use" value="Task-specific fine-tuning"> <span data-i18n="ct.use2">特定タスクのファインチューニング</span></label>
+                <label class="opt"><input type="radio" name="use" value="Evaluation / benchmark"> <span data-i18n="ct.use3">評価・ベンチマーク</span></label>
+                <label class="opt"><input type="radio" name="use" value="Academic research"> <span data-i18n="ct.use4">学術研究</span></label>
+                <label class="opt"><input type="radio" name="use" value="Exploring"> <span data-i18n="ct.use5">まだ検討中</span></label>
+              </div>
+            </div>
+            <div class="f">
+              <span class="fl" data-i18n="ct.method">採集方法（複数選択可）</span>
+              <div class="opts two">
+                <label class="opt"><input type="checkbox" name="method" value="Egocentric wearable"> <span data-i18n="ct.m1">一人称視点（装着型）</span></label>
+                <label class="opt"><input type="checkbox" name="method" value="UMI handheld gripper"> <span data-i18n="ct.m2">UMI型ハンドヘルド</span></label>
+                <label class="opt"><input type="checkbox" name="method" value="Data glove / mocap"> <span data-i18n="ct.m3">データグローブ・モーキャプ</span></label>
+                <label class="opt"><input type="checkbox" name="method" value="Robot teleoperation"> <span data-i18n="ct.m4">実機テレオペレーション</span></label>
+                <label class="opt"><input type="checkbox" name="method" value="Recommend one"> <span data-i18n="ct.m5">提案してほしい</span></label>
+              </div>
+            </div>
+            <div class="f">
+              <span class="fl" data-i18n="ct.scene">シーン（複数選択可）</span>
+              <div class="opts two">
+                <label class="opt"><input type="checkbox" name="scenes" value="Factory / assembly"> <span data-i18n="ct.sc1">工場・組立</span></label>
+                <label class="opt"><input type="checkbox" name="scenes" value="Warehouse / logistics"> <span data-i18n="ct.sc2">倉庫・物流</span></label>
+                <label class="opt"><input type="checkbox" name="scenes" value="Retail"> <span data-i18n="ct.sc3">小売</span></label>
+                <label class="opt"><input type="checkbox" name="scenes" value="Hotel / hospitality"> <span data-i18n="ct.sc4">ホテル・サービス</span></label>
+                <label class="opt"><input type="checkbox" name="scenes" value="Healthcare / elder care"> <span data-i18n="ct.sc5">医療・介護</span></label>
+                <label class="opt"><input type="checkbox" name="scenes" value="Home"> <span data-i18n="ct.sc6">家庭</span></label>
+                <label class="opt"><input type="checkbox" name="scenes" value="Kitchen / food service"> <span data-i18n="ct.sc7">厨房・飲食</span></label>
+                <label class="opt"><input type="checkbox" name="scenes" value="Other"> <span data-i18n="ct.sc8">その他</span></label>
+              </div>
+            </div>
+            <div class="f">
+              <label for="i_robot" data-i18n="ct.robot">対象機種</label>
+              <span class="hint" data-i18n="ct.robotHint">任意。学習させたいロボットやハンドの機種名</span>
+              <input type="text" id="i_robot" name="target_robot" data-i18n-ph="ct.robotPh" placeholder="例：双腕アーム＋平行グリッパー">
+            </div>
+          </div>
+
+          <!-- 2 · scale & timing -->
+          <div class="pane">
+            <div class="f">
+              <span class="fl"><span data-i18n="ct.vol">想定規模</span> <span class="req">*</span></span>
+              <div class="tiles">
+                <label class="tile"><input type="radio" name="volume" value="Pilot (<100h)" required><span class="a">&lt;100h</span><span class="s" data-i18n="ct.vol1">パイロット</span></label>
+                <label class="tile"><input type="radio" name="volume" value="100-1,000h"><span class="a">100–1k h</span><span class="s" data-i18n="ct.vol2">中規模</span></label>
+                <label class="tile"><input type="radio" name="volume" value="1,000h+"><span class="a">1k h+</span><span class="s" data-i18n="ct.vol3">大規模</span></label>
+                <label class="tile"><input type="radio" name="volume" value="Undecided"><span class="a">?</span><span class="s" data-i18n="ct.undecided">未定</span></label>
+              </div>
+            </div>
+            <div class="g2">
+              <div class="f"><label for="i_start" data-i18n="ct.start">開始希望時期</label>
+                <select id="i_start" name="start">
+                  <option value="" data-i18n="ct.select">選択してください</option>
+                  <option value="Within 1 month" data-i18n="ct.st1">1か月以内</option>
+                  <option value="Within 3 months" data-i18n="ct.st2">3か月以内</option>
+                  <option value="Within 6 months" data-i18n="ct.st3">半年以内</option>
+                  <option value="Researching" data-i18n="ct.st4">情報収集の段階</option>
+                </select></div>
+              <div class="f"><label for="i_where" data-i18n="ct.where">採集場所</label>
+                <select id="i_where" name="location">
+                  <option value="" data-i18n="ct.select">選択してください</option>
+                  <option value="Our site in Japan" data-i18n="ct.wh1">自社の現場（日本）</option>
+                  <option value="Robix site" data-i18n="ct.wh2">Robixの採集拠点</option>
+                  <option value="SF Bay Area" data-i18n="ct.wh3">米国ベイエリア</option>
+                  <option value="Undecided" data-i18n="ct.undecided">未定</option>
+                </select></div>
+            </div>
+            <div class="f">
+              <span class="fl" data-i18n="ct.fmt">納品形式（複数選択可）</span>
+              <div class="opts two">
+                <label class="opt"><input type="checkbox" name="format" value="LeRobot"> LeRobot</label>
+                <label class="opt"><input type="checkbox" name="format" value="RLDS"> RLDS</label>
+                <label class="opt"><input type="checkbox" name="format" value="HDF5"> HDF5</label>
+                <label class="opt"><input type="checkbox" name="format" value="Custom"> <span data-i18n="sv.dl.custom">カスタム形式</span></label>
+                <label class="opt"><input type="checkbox" name="format" value="Undecided"> <span data-i18n="ct.undecided">未定</span></label>
+              </div>
+            </div>
+            <div class="f">
+              <span class="fl" data-i18n="ct.site">日本採集拠点の共同構築へのご関心</span>
+              <div class="opts">
+                <label class="opt"><input type="radio" name="japan_site_interest" value="Yes"> <span data-i18n="ct.si1">関心がある</span></label>
+                <label class="opt"><input type="radio" name="japan_site_interest" value="Tell me more"> <span data-i18n="ct.si2">詳しく聞きたい</span></label>
+                <label class="opt"><input type="radio" name="japan_site_interest" value="No"> <span data-i18n="ct.si3">今回は不要</span></label>
+              </div>
+            </div>
+          </div>
+
+          <!-- 3 · contact -->
+          <div class="pane">
+            <div class="g2">
+              <div class="f"><label for="i_name"><span data-i18n="ct.name">お名前</span> <span class="req">*</span></label>
+                <input type="text" id="i_name" name="name" autocomplete="name" required></div>
+              <div class="f"><label for="i_org"><span data-i18n="ct.org">会社・機関名</span> <span class="req">*</span></label>
+                <input type="text" id="i_org" name="organization" autocomplete="organization" required></div>
+              <div class="f"><label for="i_dept" data-i18n="ct.dept">部署</label>
+                <input type="text" id="i_dept" name="department"></div>
+              <div class="f"><label for="i_title" data-i18n="ct.title">役職</label>
+                <input type="text" id="i_title" name="job_title" autocomplete="organization-title"></div>
+              <div class="f"><label for="i_email"><span data-i18n="ct.email">メールアドレス</span> <span class="req">*</span></label>
+                <input type="email" id="i_email" name="email" autocomplete="email" required></div>
+              <div class="f"><label for="i_phone" data-i18n="ct.phone">電話番号</label>
+                <input type="tel" id="i_phone" name="phone" autocomplete="tel"></div>
+            </div>
+            <div class="f"><label for="i_msg" data-i18n="ct.msg">ご相談内容</label>
+              <textarea id="i_msg" name="message" data-i18n-ph="ct.msgPh" placeholder="学習させたいタスク、現在の課題、ご質問など"></textarea></div>
+            <div class="f">
+              <div class="opts">
+                <label class="opt"><input type="checkbox" name="nda_first" value="Wants NDA before details"> <span data-i18n="ct.nda">NDAを先に締結したい</span></label>
+                <label class="opt"><input type="checkbox" name="privacy_consent" value="Agreed" required> <span><span data-i18n="ct.agree"><a href="privacy.html" target="_blank">プライバシーポリシー</a>に同意します</span> <span class="req">*</span></span></label>
+              </div>
+            </div>
+          </div>
+
+          <div class="nav-row">
+            <button class="btn" type="button" data-back hidden data-i18n="ct.back">← 戻る</button>
+            <span class="sp"></span>
+            <button class="btn btn-p" type="button" data-next data-i18n="ct.next">次へ →</button>
+            <button class="btn btn-p btn-lg" type="submit" hidden data-i18n="ct.send">送信する</button>
+          </div>
+          <p class="saved"></p>
+          <div class="err"></div>
+        </form>
+
+        <div class="done" id="dn1">
+          <p class="mk" data-i18n="ct.doneh">送信しました</p>
+          <p data-i18n="ct.donep">ご相談ありがとうございます。担当者より2営業日以内にご連絡します。</p>
+          <a class="btn" href="index.html" data-i18n="ct.home">トップへ戻る</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="stack">
+      <div class="callout">
+        <h3 data-i18n="ct.after">送信後の流れ</h3>
+        <p class="micro" data-i18n="ct.afterp">
+          <b>2営業日以内</b> — 担当者よりご連絡し、オンライン面談の日程を調整します。<br>
+          <b>面談</b> — 用途と条件を伺い、採集方法をご提案します。<br>
+          <b>パイロット</b> — 少量の採集で、形式と品質をご確認いただきます。</p>
+      </div>
+      <div class="callout">
+        <h3 data-i18n="pl.h2">お客様のデータは、お客様のものです</h3>
+        <p data-i18n="ct.side2">国内保管・お客様への帰属・削除証明など、6つのお約束があります。</p>
+        <a class="btn btn-gh btn-sm" href="security.html" data-i18n="pl.more">詳しく見る →</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer class="btm">
+  <div class="wrap">
+    <div>
+      <p><b>Robix</b> — <span data-i18n="foot.tag">実環境ロボット学習データの採集サービス</span></p>
+      <p data-i18n="foot.tm">掲載している企業名・校名は協業実績を示すもので、各権利者の商標または登録商標です。</p>
+      <p><a class="subbrand" href="repair.html" data-i18n="foot.repair">Robix Repair — 米国ベイエリアでのロボット保守 →</a></p>
+    </div>
+    <nav class="fnav">
+      <a href="service.html" data-i18n="nav.service">サービス</a>
+      <a href="facility.html" data-i18n="nav.facility">採集拠点</a>
+      <a href="security.html" data-i18n="nav.security">データの取り扱い</a>
+      <a href="company.html" data-i18n="nav.company">会社概要</a>
+      <a href="contact.html" data-i18n="nav.contact">お問い合わせ</a>
+      <a href="privacy.html" data-i18n="nav.privacy">プライバシーポリシー</a>
+    </nav>
+    <button class="tog" id="tog" type="button">Theme</button>
+  </div>
+</footer>
+
+<script src="assets/data.js"></script>
+<script src="assets/i18n.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>

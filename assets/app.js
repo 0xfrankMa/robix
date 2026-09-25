@@ -8,6 +8,22 @@ const $  = (s, r = document) => r.querySelector(s);
 const $$ = (s, r = document) => [...r.querySelectorAll(s)];
 const money = n => "$" + n.toLocaleString("en-US");
 
+/* ─── UI strings the scripts write themselves ──────────────────
+   English defaults live here so the repair pages (which don't load
+   i18n.js) keep working. i18n.js supplies UI_JA for bilingual pages. */
+const UI_EN = {
+  menu: "Menu", close: "Close",
+  stepMissing: "One required field on this screen is still empty.",
+  anyMissing: "One required field is still empty.",
+  restored: "Draft restored.", saved: "Draft saved.", sending: "Sending…",
+  failed: "That didn't send. Email {email} — your answers are still saved in this browser."
+};
+const curLang = () => (document.documentElement.lang || "en").slice(0, 2) === "ja" ? "ja" : "en";
+function ui(k){
+  const ja = curLang() === "ja" && typeof UI_JA !== "undefined" ? UI_JA[k] : null;
+  return ja || UI_EN[k];
+}
+
 /* ─── schematic sprite ─────────────────────────────────────────
    Injected into the document so <use href="#id"> resolves — this
    also works from file://, which a CDN-hosted sprite would not. */
@@ -17,6 +33,9 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function boot(){
+  renderLogos();
+  renderGallery();
+  i18n();          /* after renderers, so rendered nodes get translated too */
   nav();
   theme();
   renderPlatforms();
@@ -40,9 +59,64 @@ function nav(){
     b.addEventListener("click", () => {
       const open = menu.classList.toggle("open");
       b.setAttribute("aria-expanded", String(open));
-      b.textContent = open ? "Close" : "Menu";
+      b.textContent = open ? ui("close") : ui("menu");
     });
   }
+}
+
+/* ─── language: JA (default, written in the HTML) ⇄ EN (i18n.js) ─
+   Only runs on pages with a .lang switcher. ?lang=en forces English,
+   which is what a colleague pastes into an email. */
+function i18n(){
+  const sw = $$(".lang [data-lang]");
+  if(!sw.length || typeof I18N === "undefined") return;
+  const text = $$("[data-i18n]"), ph = $$("[data-i18n-ph]"), ct = $$("[data-i18n-content]");
+  text.forEach(n => n._ja = n.innerHTML);
+  ph.forEach(n => n._ja = n.getAttribute("placeholder"));
+  ct.forEach(n => n._ja = n.getAttribute("content"));
+
+  let cur = "ja";
+  try { cur = localStorage.getItem("rbx-lang") || "ja"; } catch(e){}
+  const q = new URLSearchParams(location.search).get("lang");
+  if(q === "en" || q === "ja") cur = q;
+  set(cur);
+  sw.forEach(b => b.addEventListener("click", () => set(b.dataset.lang)));
+
+  function set(l){
+    const en = l === "en", E = I18N.en;
+    const pick = (n, k) => en && E[k] != null ? E[k] : n._ja;
+    document.documentElement.lang = l;
+    text.forEach(n => { n.innerHTML = pick(n, n.dataset.i18n); });
+    ph.forEach(n => n.setAttribute("placeholder", pick(n, n.dataset.i18nPh)));
+    ct.forEach(n => n.setAttribute("content", pick(n, n.dataset.i18nContent)));
+    sw.forEach(b => b.setAttribute("aria-pressed", String(b.dataset.lang === l)));
+    $$('input[name="lang"]').forEach(i => { i.value = l; });
+    const b = $(".burger");
+    if(b) b.textContent = $(".nav.open") ? ui("close") : ui("menu");
+    try { localStorage.setItem("rbx-lang", l); } catch(e){}
+  }
+}
+
+/* ─── partner wordmarks ──────────────────────────────────────── */
+function renderLogos(){
+  $$("[data-logos]").forEach(h => {
+    h.innerHTML = LOGOS.filter(l => l.kind === h.dataset.logos).map(l =>
+      '<li class="logo">' + (l.img
+        ? '<img src="' + l.img + '" alt="' + l.name + '" loading="lazy">'
+        : '<span>' + l.name + '</span>') + '</li>').join("");
+  });
+}
+
+/* ─── in-the-wild gallery ────────────────────────────────────── */
+function renderGallery(){
+  $$("[data-gallery]").forEach(h => {
+    h.innerHTML = GALLERY.filter(g => g.set === h.dataset.gallery).map(g =>
+      '<figure class="shot"><picture>' +
+        '<source srcset="assets/img/' + g.img + '.webp" type="image/webp">' +
+        '<img src="assets/img/' + g.img + '.jpg" alt="" loading="lazy"></picture>' +
+      '<figcaption data-i18n="scene.' + g.scene + '">' + SCENES[g.scene] + '</figcaption></figure>'
+    ).join("");
+  });
 }
 
 /* ─── theme: system → light → dark ───────────────────────────── */
@@ -267,7 +341,7 @@ function wizard(form){
     if(bad){
       bad.focus();
       bad.scrollIntoView({block:"center", behavior:"smooth"});
-      err.textContent = "One required field on this screen is still empty.";
+      err.textContent = ui("stepMissing");
       err.classList.add("on");
       return false;
     }
@@ -294,7 +368,7 @@ function wizard(form){
           } else n.value = d[name];
         });
       });
-      if(saved) saved.textContent = "Draft restored.";
+      if(saved) saved.textContent = ui("restored");
     }
   }catch(e){}
 
@@ -304,7 +378,7 @@ function wizard(form){
     t = setTimeout(() => {
       try{
         localStorage.setItem(key, JSON.stringify(collect(form)));
-        if(saved) saved.textContent = "Draft saved.";
+        if(saved) saved.textContent = ui("saved");
       }catch(e){}
     }, 600);
   });
@@ -317,7 +391,7 @@ function wizard(form){
       if(pane){
         i = panes.indexOf(pane); paint();
         bad.focus(); bad.scrollIntoView({block:"center", behavior:"smooth"});
-        err.textContent = "One required field is still empty.";
+        err.textContent = ui("anyMissing");
         err.classList.add("on");
       }
       return;
@@ -325,6 +399,7 @@ function wizard(form){
     const data = collect(form);
     data.submitted_at = new Date().toISOString();
     data.page_url = location.href;
+    if("lang" in data) data.lang = curLang();   /* the language they were reading at submit */
 
     const ok = () => {
       try{ localStorage.removeItem(key); }catch(e){}
@@ -347,7 +422,7 @@ function wizard(form){
 
     send.disabled = true;
     const lbl = send.textContent;
-    send.textContent = "Sending…";
+    send.textContent = ui("sending");
     /* Both wizards post to the same endpoint. Send the per-form subject so a
        work order and a bench application are distinguishable in the inbox.
        `subject` is Formspree's special field for the Subject header (NOT
@@ -363,8 +438,8 @@ function wizard(form){
       .catch(() => {
         send.disabled = false;
         send.textContent = lbl;
-        err.innerHTML = 'That didn\'t send. Email <a href="mailto:' + CONFIG.FALLBACK_EMAIL +
-          '">' + CONFIG.FALLBACK_EMAIL + '</a> — your answers are still saved in this browser.';
+        err.innerHTML = ui("failed").replace("{email}", '<a href="mailto:' +
+          CONFIG.FALLBACK_EMAIL + '">' + CONFIG.FALLBACK_EMAIL + '</a>');
         err.classList.add("on");
       });
   });

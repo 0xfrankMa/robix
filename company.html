@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title data-i18n="t.company">会社概要 — Robix</title>
+<meta name="description" data-i18n-content="d.company" content="Robixの会社概要とチームについて。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@600;700;800&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Noto+Sans+JP:wght@400;500;700;800&display=swap">
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+
+<header class="top">
+  <div class="top-in">
+    <a class="brand" href="index.html"><span class="dot"></span>Robix</a>
+    <nav class="nav">
+      <a class="lnk" href="service.html" data-i18n="nav.service">サービス</a>
+      <a class="lnk" href="facility.html" data-i18n="nav.facility">採集拠点</a>
+      <a class="lnk" href="security.html" data-i18n="nav.security">データの取り扱い</a>
+      <a class="lnk" href="company.html" data-i18n="nav.company">会社概要</a>
+      <a class="lnk lnk-m" href="contact.html" data-i18n="nav.cta">ご相談</a>
+    </nav>
+    <div class="lang" role="group" aria-label="Language"><button type="button" data-lang="ja" aria-pressed="true">JA</button><button type="button" data-lang="en" aria-pressed="false">EN</button></div>
+    <a class="btn btn-p nav-cta" href="contact.html" data-i18n="nav.cta">ご相談</a>
+    <button class="burger btn btn-gh" type="button" aria-expanded="false">メニュー</button>
+  </div>
+</header>
+
+<div class="phead">
+  <div class="wrap">
+    <span class="lab" data-i18n="nav.company">会社概要</span>
+    <h1 data-i18n="nav.company">会社概要</h1>
+  </div>
+</div>
+
+<section>
+  <div class="wrap narrow">
+    <dl class="facts">
+      <dt data-i18n="co.name">名称</dt><dd>Robix</dd>
+      <dt data-i18n="co.biz">事業内容</dt>
+      <dd><span data-i18n="co.biz1">実環境ロボット学習データの採集・提供</span><br>
+        <span data-i18n="co.biz2">ロボットの保守・修理（米国ベイエリア）</span></dd>
+      <dt data-i18n="co.area">対応地域</dt><dd data-i18n="co.areav">日本、米国（サンフランシスコ・ベイエリア）</dd>
+      <dt data-i18n="co.web">ウェブサイト</dt><dd>robix.one</dd>
+      <dt data-i18n="co.contact">お問い合わせ</dt>
+      <dd><a href="contact.html" data-i18n="co.form">ご相談フォーム</a> ・ <a href="mailto:hello@robix.one">hello@robix.one</a></dd>
+      <!-- TODO(user): 日本窓口・契約主体が決まったら hidden を外して記入
+      <dt>日本窓口</dt><dd>氏名・役職 / email</dd>
+      -->
+    </dl>
+  </div>
+</section>
+
+<section>
+  <div class="wrap narrow">
+    <div class="shead"><div><span class="lab" data-i18n="co.team.lab">チーム</span>
+      <h2 data-i18n="co.team.h2">私たちについて</h2></div></div>
+    <div class="prose">
+      <p data-i18n="co.team.p1">Robixは、ロボティクス・エンボディドAIの研究開発と、大規模なデータ採集施設の設計・運営に携わってきたメンバーで構成されています。</p>
+      <p data-i18n="co.team.p2">データを集めるだけでなく、ロボット本体の保守まで自社で対応できることが私たちの強みです。採集中に機体に問題が起きても、その場で対応し、スケジュールへの影響を最小限に抑えます。</p>
+    </div>
+  </div>
+</section>
+
+<footer class="btm">
+  <div class="wrap">
+    <div>
+      <p><b>Robix</b> — <span data-i18n="foot.tag">実環境ロボット学習データの採集サービス</span></p>
+      <p data-i18n="foot.tm">掲載している企業名・校名は協業実績を示すもので、各権利者の商標または登録商標です。</p>
+      <p><a class="subbrand" href="repair.html" data-i18n="foot.repair">Robix Repair — 米国ベイエリアでのロボット保守 →</a></p>
+    </div>
+    <nav class="fnav">
+      <a href="service.html" data-i18n="nav.service">サービス</a>
+      <a href="facility.html" data-i18n="nav.facility">採集拠点</a>
+      <a href="security.html" data-i18n="nav.security">データの取り扱い</a>
+      <a href="company.html" data-i18n="nav.company">会社概要</a>
+      <a href="contact.html" data-i18n="nav.contact">お問い合わせ</a>
+      <a href="privacy.html" data-i18n="nav.privacy">プライバシーポリシー</a>
+    </nav>
+    <button class="tog" id="tog" type="button">Theme</button>
+  </div>
+</footer>
+
+<script src="assets/data.js"></script>
+<script src="assets/i18n.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>

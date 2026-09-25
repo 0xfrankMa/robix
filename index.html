@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Robix — Humanoid Robot Repair, SF Bay Area</title>
-<meta name="description" content="Local diagnosis and repair for humanoid robots. On-site in 48 hours, fixed written quote, most repairs inside a week.">
+<title data-i18n="t.home">Robix — 実環境ロボット学習データの採集</title>
+<meta name="description" data-i18n-content="d.home" content="工場・倉庫・小売・ホテル・医療現場でのロボット学習データ採集。お客様の現場への出張採集から、日本での採集拠点の共同構築まで。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@600;700;800&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@600;700;800&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Noto+Sans+JP:wght@400;500;700;800&display=swap">
 <link rel="stylesheet" href="assets/styles.css">
 </head>
 <body>
@@ -16,134 +16,187 @@
   <div class="top-in">
     <a class="brand" href="index.html"><span class="dot"></span>Robix</a>
     <nav class="nav">
-      <a class="lnk" href="platforms.html">Platforms</a>
-      <a class="lnk" href="repairs.html">Repairs</a>
-      <a class="lnk" href="bench.html">The bench</a>
-      <a class="lnk" href="join.html">Work with us</a>
+      <a class="lnk" href="service.html" data-i18n="nav.service">サービス</a>
+      <a class="lnk" href="facility.html" data-i18n="nav.facility">採集拠点</a>
+      <a class="lnk" href="security.html" data-i18n="nav.security">データの取り扱い</a>
+      <a class="lnk" href="company.html" data-i18n="nav.company">会社概要</a>
+      <a class="lnk lnk-m" href="contact.html" data-i18n="nav.cta">ご相談</a>
     </nav>
-    <a class="btn btn-p nav-cta" href="quote.html">Get a quote</a>
-    <button class="burger btn btn-gh" type="button" aria-expanded="false">Menu</button>
+    <div class="lang" role="group" aria-label="Language"><button type="button" data-lang="ja" aria-pressed="true">JA</button><button type="button" data-lang="en" aria-pressed="false">EN</button></div>
+    <a class="btn btn-p nav-cta" href="contact.html" data-i18n="nav.cta">ご相談</a>
+    <button class="burger btn btn-gh" type="button" aria-expanded="false">メニュー</button>
   </div>
 </header>
 
 <!-- ═══ HERO ═══ -->
-<div class="phead">
-  <div class="wrap hero-split">
-    <div>
-      <span class="lab">Humanoid robot service · SF Bay Area</span>
-      <h1>Broken humanoid?<br>Fixed here, not shipped back.</h1>
-      <p class="lede">On-site diagnosis in 48 hours. Fixed written quote before anyone opens a panel. Most repairs done inside a week.</p>
-
-      <div class="finder hero-finder">
-        <span class="fl">Find your repair</span>
-        <select id="findPlatform" aria-label="Which robot do you have">
-          <option value="">Which robot do you have?</option>
-          <option value="g1">Unitree G1 / G1 EDU / G1 Pro</option>
-          <option value="r1">Unitree R1 / R1 Air</option>
-          <option value="h2">Unitree H1 / H2</option>
-          <option value="quad">Unitree Go2 / B2</option>
-          <option value="booster">Booster T1 / K1</option>
-          <option value="other">Something else</option>
-        </select>
-        <select id="findFault" aria-label="What is it doing">
-          <option value="">What's it doing?</option>
-          <option value="hand">Hand or gripper fault</option>
-          <option value="joint">Joint won't move / noisy</option>
-          <option value="fall">Fell over, physical damage</option>
-          <option value="power">Won't power on / battery</option>
-          <option value="sensor">LiDAR, camera, calibration</option>
-          <option value="compute">Won't boot / SDK</option>
-          <option value="">Not sure</option>
-        </select>
-        <button class="btn btn-p" id="findGo" type="button">Get a quote →</button>
-      </div>
-    </div>
-
-    <div class="vs">
-      <div class="vsr">
-        <span class="who"><b>Ship it to the factory</b>Freight both ways, customs, blind diagnosis</span>
-        <span class="t">8 wks</span>
-      </div>
-      <div class="vsr">
-        <span class="who"><b>Bench it with us</b>Diagnosed on site, repaired locally</span>
-        <span class="t">5 days</span>
-      </div>
-      <div class="vs-foot">$450 on-site diagnosis, credited in full against the repair. Free if we can't fix it.</div>
+<div class="hero">
+  <picture>
+    <source srcset="assets/img/facility-hall.webp" type="image/webp">
+    <img src="assets/img/facility-hall.jpg" alt="">
+  </picture>
+  <div class="wrap">
+    <span class="lab" data-i18n="hero.lab">フィジカルAIのための実環境データ</span>
+    <h1 data-i18n="hero.h1">実環境のデータで、<br>フィジカルAIを前へ。</h1>
+    <p class="lede" data-i18n="hero.lede">工場・倉庫・小売・ホテル・医療現場で、ロボット学習用のデータを採集します。お客様の現場への出張採集から、日本での専用採集拠点の共同構築まで、一貫してご支援します。</p>
+    <div class="acts">
+      <a class="btn btn-p btn-lg" href="contact.html" data-i18n="hero.cta">パイロット採集を相談する</a>
+      <a class="btn btn-lg" href="security.html" data-i18n="hero.cta2">データの取り扱い</a>
     </div>
   </div>
+  <span class="caption" data-i18n="hero.caption">チームが運営する採集施設</span>
 </div>
 
-<!-- ═══ METRICS ═══ -->
-<div class="strip">
-  <div class="wrap"><div class="strip-in">
-    <div class="metric"><span class="v">48h</span><span class="k">To on-site diagnosis</span></div>
-    <div class="metric"><span class="v">$1,200</span><span class="k">Typical hand repair<br>vs $6,500 replacement</span></div>
-    <div class="metric"><span class="v">12</span><span class="k">Platforms &amp; parts<br>serviced</span></div>
-    <div class="metric"><span class="v">7</span><span class="k">Bay Area zones</span></div>
-  </div></div>
-</div>
-
-<!-- ═══ FEATURED PLATFORMS ═══ -->
+<!-- ═══ TRACK RECORD ═══ -->
 <section>
   <div class="wrap">
     <div class="shead">
-      <div><span class="lab">Platforms</span><h2>What we work on</h2></div>
-      <a class="btn btn-gh r" href="platforms.html">All 12 platforms &amp; parts →</a>
+      <div><span class="lab" data-i18n="logos.lab">協業実績</span>
+      <h2 data-i18n="logos.h2">協業実績のある企業・研究機関</h2></div>
     </div>
-    <div class="grid c4" id="platFeatured"></div>
+    <span class="lab logo-lab" data-i18n="logos.co">ロボットメーカー</span>
+    <ul class="logos" data-logos="co"></ul>
+    <span class="lab logo-lab" data-i18n="logos.edu">大学・研究機関</span>
+    <ul class="logos edu" data-logos="edu"></ul>
+    <p class="micro note-wide" data-i18n="logos.note">掲載は協業実績に基づきます。各社名・校名は、それぞれの権利者の商標または登録商標です。</p>
   </div>
 </section>
 
-<!-- ═══ THE GAP ═══ -->
-<section class="tight">
-  <div class="wrap">
-    <div class="grid c2">
-      <div class="callout">
-        <h3>A dead robot is almost never beyond repair</h3>
-        <p>It's beyond reach. Nobody local touches humanoids, the factory is eight weeks away, joint modules aren't sold on any public shelf, and the only quote anyone got was for a whole new assembly.</p>
-      </div>
-      <div class="callout">
-        <h3>One finger actuator shouldn't cost $6,500</h3>
-        <p>A dexterous hand is sold as one replaceable unit. Inside it are actuators, tendons, flex circuits and tactile sensors — each repairable on a bench, by someone with the skills.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══ FLOW ═══ -->
+<!-- ═══ THE PROBLEM ═══ -->
 <section>
   <div class="wrap">
-    <div class="shead"><div><span class="lab">Process</span><h2>How a job runs</h2></div></div>
+    <div class="shead"><div><span class="lab" data-i18n="wall.lab">課題</span>
+      <h2 data-i18n="wall.h2">フィジカルAIが直面する、データの壁</h2></div></div>
+    <div class="grid c3">
+      <div class="callout"><h3 data-i18n="wall.1h">実験室のデータは、現場で通用しない</h3>
+        <p data-i18n="wall.1p">整えられた実験環境で集めたデータは、照明・物の配置・人の動きが変わる実際の現場では汎化しません。</p></div>
+      <div class="callout"><h3 data-i18n="wall.2h">ロングテールの場面が集まらない</h3>
+        <p data-i18n="wall.2p">本当に難しいのは、めったに起きない例外的な場面です。実際の現場に入らなければ、それは記録できません。</p></div>
+      <div class="callout"><h3 data-i18n="wall.3h">量と質の両立が難しい</h3>
+        <p data-i18n="wall.3p">量を増やすと品質がばらつき、少数のノイズが学習を歪めます。採集手順と品質管理を仕組みにすることが欠かせません。</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ IN THE WILD ═══ -->
+<section>
+  <div class="wrap">
+    <div class="shead">
+      <div><span class="lab" data-i18n="wild.lab">現場での採集</span>
+      <h2 data-i18n="wild.h2">実際の現場で、人の作業をそのまま記録する</h2></div>
+    </div>
+    <p class="lede dim note-wide" data-i18n="wild.p">装着型デバイスを付けた採集スタッフが、ホテル・倉庫・医療施設などで日常の作業を行い、一人称視点の映像と手・身体の動きを同期して記録します。</p>
+    <div class="gallery" data-gallery="wild"></div>
+  </div>
+</section>
+
+<!-- ═══ METHODS ═══ -->
+<section>
+  <div class="wrap">
+    <div class="shead">
+      <div><span class="lab" data-i18n="m.lab">採集方法</span>
+      <h2 data-i18n="m.h2">2つの採集方法</h2></div>
+      <a class="btn btn-gh r" href="service.html" data-i18n="m.more">サービスの詳細 →</a>
+    </div>
+    <div class="stack">
+      <article class="method">
+        <div class="media"><picture>
+          <source srcset="assets/img/wild-hotel-bed.webp" type="image/webp">
+          <img src="assets/img/wild-hotel-bed.jpg" alt="" loading="lazy"></picture></div>
+        <div class="body">
+          <span class="badge acc" data-i18n="m.1tag">装着型</span>
+          <h3 data-i18n="m.1h">装着型・ハンドヘルド採集</h3>
+          <p data-i18n="m.1p">ロボットを持ち込まずに、人が作業する様子を記録します。機材が軽く、1日で複数の現場を回れるため、場面の多様性を最も効率よく確保できます。</p>
+          <ul>
+            <li data-i18n="m.1a">一人称視点ヘッドセット（頭部・手首カメラ）</li>
+            <li data-i18n="m.1b">UMI型ハンドヘルドグリッパー</li>
+            <li data-i18n="m.1c">データグローブ・モーションキャプチャ</li>
+            <li data-i18n="m.1d">現場の業務を止めずに採集可能</li>
+          </ul>
+        </div>
+      </article>
+      <article class="method v">
+        <div class="media"><video src="assets/video/teleop.mp4" poster="assets/img/teleop-poster.jpg"
+          autoplay muted loop playsinline preload="metadata" aria-hidden="true"></video></div>
+        <div class="body">
+          <span class="badge acc" data-i18n="m.2tag">実機</span>
+          <h3 data-i18n="m.2h">実機テレオペレーション</h3>
+          <p data-i18n="m.2p">ヒューマノイドやアームを現場に持ち込み、専任オペレーターが遠隔操作でタスクを実行します。学習させたい機体の身体構造に合ったデータが得られます。</p>
+          <ul>
+            <li data-i18n="m.2a">ヒューマノイド・双腕・単腕アームに対応</li>
+            <li data-i18n="m.2b">専任オペレーターによる安定した品質</li>
+            <li data-i18n="m.2c">機体の保守を自社で行い、ダウンタイムを最小化</li>
+            <li data-i18n="m.2d">ご指定の機種・エンドエフェクタにも対応（要相談）</li>
+          </ul>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ HOW WE DELIVER IN JAPAN ═══ -->
+<section>
+  <div class="wrap">
+    <div class="shead"><div><span class="lab" data-i18n="ph.lab">提供体制</span>
+      <h2 data-i18n="ph.h2">日本での提供体制</h2></div></div>
+    <div class="grid two">
+      <div class="phase now">
+        <span class="badge live" data-i18n="ph.1tag">今すぐ</span>
+        <h3 data-i18n="ph.1h">お客様の現場での出張採集</h3>
+        <p data-i18n="ph.1p">採集チームと機材が、お客様の工場・倉庫・店舗に伺います。まずは小規模なパイロット採集で、データ形式と品質をご確認いただけます。</p>
+      </div>
+      <div class="phase next">
+        <span class="badge rec" data-i18n="ph.2tag">次のステップ</span>
+        <h3 data-i18n="ph.2h">日本採集拠点の共同構築</h3>
+        <p data-i18n="ph.2p">大規模な採集施設を設計・運営してきた経験をもとに、日本での専用採集拠点を準備しています。初期パートナーには、再現するシーンや作業の設計段階から参加していただけます。</p>
+        <a class="btn btn-gh btn-sm push-start" href="facility.html" data-i18n="ph.more">採集拠点について →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ DATA HANDLING ═══ -->
+<section>
+  <div class="wrap">
+    <div class="shead">
+      <div><span class="lab" data-i18n="pl.lab">データの取り扱い</span>
+      <h2 data-i18n="pl.h2">お客様のデータは、お客様のものです</h2></div>
+      <a class="btn btn-gh r" href="security.html" data-i18n="pl.more">詳しく見る →</a>
+    </div>
+    <ol class="pledges">
+      <li><h3 data-i18n="pl.1h">国内保管</h3><p data-i18n="pl.1s">日本国内のデータセンターに保管し、国外へは移転しません。</p></li>
+      <li><h3 data-i18n="pl.2h">お客様に帰属</h3><p data-i18n="pl.2s">採集データと派生物の権利はお客様に帰属します。当社のモデル学習や第三者提供には使用しません。</p></li>
+      <li><h3 data-i18n="pl.3h">案件ごとの分離</h3><p data-i18n="pl.3s">お客様間で物理的・論理的に分離し、アクセス権は担当者に限定します。</p></li>
+      <li><h3 data-i18n="pl.4h">個人情報保護法への準拠</h3><p data-i18n="pl.4s">映り込む人物の顔はマスキング可能です。現場スタッフからは事前に同意を取得します。</p></li>
+      <li><h3 data-i18n="pl.5h">NDA・契約</h3><p data-i18n="pl.5s">ご相談前のNDA締結に対応します。保管期間と削除義務は契約に明記します。</p></li>
+      <li><h3 data-i18n="pl.6h">削除証明</h3><p data-i18n="pl.6s">プロジェクト終了時またはご要望に応じてデータを削除し、削除証明書を発行します。</p></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ═══ PROCESS ═══ -->
+<section>
+  <div class="wrap">
+    <div class="shead"><div><span class="lab" data-i18n="fl.lab">進め方</span>
+      <h2 data-i18n="fl.h2">ご相談から納品まで</h2></div></div>
     <div class="flow">
-      <div><span class="n">01</span><h3>Tell us what you have</h3><p>Four short screens. Two minutes.</p></div>
-      <div><span class="n">02</span><h3>On-site diagnosis</h3><p>Within 48 hours. $450, credited to the repair.</p></div>
-      <div><span class="n">03</span><h3>Fixed written quote</h3><p>One number, one date. You approve before any work.</p></div>
-      <div><span class="n">04</span><h3>Running again</h3><p>Plus a written failure report and what to watch next.</p></div>
+      <div><span class="n">01</span><h3 data-i18n="fl.1h">ヒアリング</h3><p data-i18n="fl.1p">用途・タスク・対象機種・必要量を伺い、採集方法をご提案します。</p></div>
+      <div><span class="n">02</span><h3 data-i18n="fl.2h">パイロット採集</h3><p data-i18n="fl.2p">少量を採集し、データ形式・品質・アノテーションをすり合わせます。</p></div>
+      <div><span class="n">03</span><h3 data-i18n="fl.3h">本採集</h3><p data-i18n="fl.3p">合意した手順と品質基準で、規模を拡大して採集します。</p></div>
+      <div><span class="n">04</span><h3 data-i18n="fl.4h">納品</h3><p data-i18n="fl.4p">LeRobot・RLDS・HDF5など、ご指定の形式でメタデータとともに納品します。</p></div>
     </div>
   </div>
 </section>
 
-<!-- ═══ COVERAGE ═══ -->
-<section>
-  <div class="wrap">
-    <div class="shead">
-      <div><span class="lab">Coverage</span><h2>Where we come to you</h2></div>
-      <a class="btn btn-gh r" href="bench.html">Coverage &amp; the bench →</a>
-    </div>
-    <div class="board" id="board"></div>
-  </div>
-</section>
-
-<!-- ═══ CTA BAND ═══ -->
+<!-- ═══ CTA ═══ -->
 <div class="cta-band">
   <div class="wrap">
     <div>
-      <h2>Two ways in</h2>
-      <p class="band-copy">Own a robot that's down, or repair hardware for a living. Both start here.</p>
+      <h2 data-i18n="cta.h2">まずはパイロットから</h2>
+      <p class="band-copy" data-i18n="cta.p">用途と条件を伺ったうえで、採集方法と進め方をご提案します。NDA締結後のご相談も可能です。</p>
     </div>
     <div class="acts">
-      <a class="btn btn-p btn-lg" href="quote.html">Open a work order</a>
-      <a class="btn btn-lg" href="join.html">Join the bench</a>
+      <a class="btn btn-p btn-lg" href="contact.html" data-i18n="cta.btn">ご相談フォーム</a>
+      <a class="btn btn-lg" href="security.html" data-i18n="hero.cta2">データの取り扱い</a>
     </div>
   </div>
 </div>
@@ -151,22 +204,24 @@
 <footer class="btm">
   <div class="wrap">
     <div>
-      <p><b>Robix</b> — independent humanoid robot diagnosis and repair, San Francisco Bay Area.</p>
-      <p>Not affiliated with, authorised by or endorsed by Unitree Robotics, Booster Robotics or any manufacturer. Product names belong to their owners. Illustrations are original schematics, not manufacturer images.</p>
-      <p>Prices are indicative starting points. Replacement-cost comparisons use public reseller list prices, September 2026.</p>
+      <p><b>Robix</b> — <span data-i18n="foot.tag">実環境ロボット学習データの採集サービス</span></p>
+      <p data-i18n="foot.tm">掲載している企業名・校名は協業実績を示すもので、各権利者の商標または登録商標です。</p>
+      <p><a class="subbrand" href="repair.html" data-i18n="foot.repair">Robix Repair — 米国ベイエリアでのロボット保守 →</a></p>
     </div>
     <nav class="fnav">
-      <a href="platforms.html">Platforms</a>
-      <a href="repairs.html">Repairs</a>
-      <a href="bench.html">The bench</a>
-      <a href="quote.html">Get a quote</a>
-      <a href="join.html">Join the bench</a>
+      <a href="service.html" data-i18n="nav.service">サービス</a>
+      <a href="facility.html" data-i18n="nav.facility">採集拠点</a>
+      <a href="security.html" data-i18n="nav.security">データの取り扱い</a>
+      <a href="company.html" data-i18n="nav.company">会社概要</a>
+      <a href="contact.html" data-i18n="nav.contact">お問い合わせ</a>
+      <a href="privacy.html" data-i18n="nav.privacy">プライバシーポリシー</a>
     </nav>
     <button class="tog" id="tog" type="button">Theme</button>
   </div>
 </footer>
 
 <script src="assets/data.js"></script>
+<script src="assets/i18n.js"></script>
 <script src="assets/app.js"></script>
 </body>
 </html>
