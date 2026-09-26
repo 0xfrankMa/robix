@@ -30,6 +30,8 @@ const I18N = { en: {
   "nav.privacy":  "Privacy policy",
   "foot.tag":     "Real-world robot learning data collection",
   "foot.tm":      "Company and university names indicate past collaboration and are trademarks of their respective owners.",
+  "foot.ct":      "Contact",
+  "foot.tel":     "+81 80-9292-6103",
   "foot.repair":  "Robix Repair — robot service in the SF Bay Area →",
   "cta.h2":  "Start with a pilot",
   "cta.p":   "Tell us what you're training and we'll propose a collection method and plan. We're happy to sign an NDA first.",
@@ -229,6 +231,10 @@ const I18N = { en: {
   "co.web":     "Website",
   "co.contact": "Contact",
   "co.form":    "Contact form",
+  "co.jp":      "Japan contact",
+  "co.mail":    "Email",
+  "co.tel":     "Phone",
+  "co.telv":    "+81 80-9292-6103",
   "co.team.lab": "Team",
   "co.team.h2":  "About us",
   "co.team.p1":  "Robix is made up of people from robotics and embodied AI R&D and from designing and operating large-scale data collection facilities.",
@@ -321,5 +327,6 @@ const I18N = { en: {
   "ct.home":  "Back to home",
   "ct.after":  "What happens next",
   "ct.afterp": "<b>Within 2 business days</b> — we reply and set up an online meeting.<br><b>Meeting</b> — we learn your use case and propose a collection method.<br><b>Pilot</b> — a small collection so you can check format and quality.",
+  "ct.direct": "Email or call us",
   "ct.side2":  "Stored in Japan, owned by you, certified deletion — six commitments in all."
 }};
