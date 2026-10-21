@@ -236,6 +236,7 @@ const I18N = { en: {
   "co.jp":      "Japan contact",
   "co.us":      "US contact",
   "co.mail":    "Email",
+  "co.people":  "People",
   "co.tel":     "Phone",
   "co.telv":    "+81 80-9292-6103",
   "co.team.lab": "Team",
