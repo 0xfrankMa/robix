@@ -37,7 +37,6 @@ function boot(){
   renderGallery();
   i18n();          /* after renderers, so rendered nodes get translated too */
   nav();
-  theme();
   renderPlatforms();
   renderServices();
   renderZones();
@@ -117,23 +116,6 @@ function renderGallery(){
       '<figcaption data-i18n="scene.' + g.scene + '">' + SCENES[g.scene] + '</figcaption></figure>'
     ).join("");
   });
-}
-
-/* ─── theme: system → light → dark ───────────────────────────── */
-function theme(){
-  const root = document.documentElement, t = $("#tog");
-  let m = "system";
-  try { m = localStorage.getItem("rbx-theme") || "system"; } catch(e){}
-  set(m);
-  function set(v){
-    m = v;
-    if(v === "system") root.removeAttribute("data-theme");
-    else root.setAttribute("data-theme", v);
-    if(t) t.textContent = "Theme · " + (v === "system" ? "auto" : v);
-    try { localStorage.setItem("rbx-theme", v); } catch(e){}
-  }
-  if(t) t.addEventListener("click", () =>
-    set(m === "system" ? "light" : m === "light" ? "dark" : "system"));
 }
 
 /* ─── figure block: photo if supplied, else schematic ────────── */

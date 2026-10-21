@@ -4,8 +4,8 @@
    Type:    Saira Condensed / IBM Plex Sans / IBM Plex Mono
    ══════════════════════════════════════════════════════════════ */
 
-/* ─── tokens: light is the base set ─────────────────────────── */
-:root{
+/* ─── tokens: the site is light-only, on every device ──────── */
+:root{color-scheme:light;
   --ground:#E9EAEA; --surface:#FFF; --surface-2:#F3F4F4; --surface-3:#E3E5E5;
   --ink:#15181A; --ink-2:#4C5355; --ink-3:#7A8183;
   --rule:#D7DADA; --rule-2:#BABEBE;
@@ -25,28 +25,6 @@
   --s1:4px; --s2:8px; --s3:12px; --s4:16px; --s5:24px;
   --s6:32px; --s7:48px; --s8:64px; --s9:88px;
   --pad:clamp(16px,4vw,40px); --r:6px; --max:1140px;
-}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
-  --ground:#101213; --surface:#191C1D; --surface-2:#222626; --surface-3:#2C3132;
-  --ink:#E9EBEB; --ink-2:#A6ADAE; --ink-3:#7D8485;
-  --rule:#2E3334; --rule-2:#454B4C;
-  --accent:#FF6B35; --accent-hi:#FF8253; --accent-soft:#33170A; --on-accent:#15181A;
-  --ok:#4FB585; --ok-soft:#132D22; --warn:#E0A040; --warn-soft:#2D2310;
-  --paper:#1E2223; --grid:#2B3031;
-  --sh-1:0 1px 2px rgba(0,0,0,.5);
-  --sh-2:0 1px 2px rgba(0,0,0,.5),0 12px 28px -18px rgba(0,0,0,.95);
-  --sh-3:0 2px 5px rgba(0,0,0,.55),0 20px 44px -22px rgba(0,0,0,1);
-}}
-:root[data-theme="dark"]{
-  --ground:#101213; --surface:#191C1D; --surface-2:#222626; --surface-3:#2C3132;
-  --ink:#E9EBEB; --ink-2:#A6ADAE; --ink-3:#7D8485;
-  --rule:#2E3334; --rule-2:#454B4C;
-  --accent:#FF6B35; --accent-hi:#FF8253; --accent-soft:#33170A; --on-accent:#15181A;
-  --ok:#4FB585; --ok-soft:#132D22; --warn:#E0A040; --warn-soft:#2D2310;
-  --paper:#1E2223; --grid:#2B3031;
-  --sh-1:0 1px 2px rgba(0,0,0,.5);
-  --sh-2:0 1px 2px rgba(0,0,0,.5),0 12px 28px -18px rgba(0,0,0,.95);
-  --sh-3:0 2px 5px rgba(0,0,0,.55),0 20px 44px -22px rgba(0,0,0,1);
 }
 
 /* ─── base ─────────────────────────────────────────────────── */
@@ -106,32 +84,6 @@ header.top{position:sticky;top:0;z-index:60;background:var(--ground);color:var(-
 .brand .sub{font-size:18px;font-weight:700;color:var(--ink-2);margin-left:3px}
 /* logo: black arm + white joints (original artwork colours) */
 .lg-arm{fill:#000}.lg-ring{stroke:#fff}.lg-ring-f{fill:#fff}
-/* header stays on the light palette in every theme, so the logo always
-   sits on the ground it was drawn for (same as phones in light mode) */
-:root[data-theme="dark"] header.top{
-  --ground:#E9EAEA; --surface:#FFF; --surface-2:#F3F4F4; --surface-3:#E3E5E5;
-  --ink:#15181A; --ink-2:#4C5355; --ink-3:#7A8183;
-  --rule:#D7DADA; --rule-2:#BABEBE;
-  --accent:#C8451A; --accent-hi:#E1541C; --accent-soft:#FBEAE3; --on-accent:#FFF;
-  --ok:#1B6E4B; --ok-soft:#E4F0EA; --warn:#8B5810; --warn-soft:#F8EFDF;
-  --paper:#FCFCFB;                       /* schematic drawing ground */
-  --grid:#DCDFDF;                        /* schematic grid lines */
-  --sh-1:0 1px 2px rgba(21,24,26,.06);
-  --sh-2:0 1px 2px rgba(21,24,26,.05),0 12px 28px -18px rgba(21,24,26,.28);
-  --sh-3:0 2px 5px rgba(21,24,26,.07),0 20px 44px -22px rgba(21,24,26,.36);
-  color-scheme:light}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) header.top{
-  --ground:#E9EAEA; --surface:#FFF; --surface-2:#F3F4F4; --surface-3:#E3E5E5;
-  --ink:#15181A; --ink-2:#4C5355; --ink-3:#7A8183;
-  --rule:#D7DADA; --rule-2:#BABEBE;
-  --accent:#C8451A; --accent-hi:#E1541C; --accent-soft:#FBEAE3; --on-accent:#FFF;
-  --ok:#1B6E4B; --ok-soft:#E4F0EA; --warn:#8B5810; --warn-soft:#F8EFDF;
-  --paper:#FCFCFB;                       /* schematic drawing ground */
-  --grid:#DCDFDF;                        /* schematic grid lines */
-  --sh-1:0 1px 2px rgba(21,24,26,.06);
-  --sh-2:0 1px 2px rgba(21,24,26,.05),0 12px 28px -18px rgba(21,24,26,.28);
-  --sh-3:0 2px 5px rgba(21,24,26,.07),0 20px 44px -22px rgba(21,24,26,.36);
-  color-scheme:light}}
 /* phones: smaller wordmark so lang toggle + menu button fit */
 @media (max-width:520px){
   .top-in{gap:var(--s3)}
@@ -178,8 +130,6 @@ section+section{border-top:1px solid var(--rule)}
 
 /* ─── metric strip ─────────────────────────────────────────── */
 .strip{background:var(--ink);color:var(--ground)}
-:root[data-theme="dark"] .strip{background:var(--surface-2);color:var(--ink)}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .strip{background:var(--surface-2);color:var(--ink)}}
 /* negative-margined so EVERY cell -- including ones after a wrap -- starts at
    the same inset as page content. first-child:padding-left:0 only fixed one. */
 .strip-in{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
@@ -211,9 +161,6 @@ section+section{border-top:1px solid var(--rule)}
   transition:background .14s,color .14s,border-color .14s}
 .pill:hover{border-color:var(--ink-3);color:var(--ink)}
 .pill[aria-pressed="true"]{background:var(--ink);color:var(--ground);border-color:var(--ink)}
-:root[data-theme="dark"] .pill[aria-pressed="true"]{background:var(--accent);color:var(--on-accent);border-color:var(--accent)}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .pill[aria-pressed="true"]{
-  background:var(--accent);color:var(--on-accent);border-color:var(--accent)}}
 
 /* ─── schematic figures ────────────────────────────────────── */
 .fig{background:var(--paper);border-bottom:1px solid var(--rule);height:224px;
@@ -448,17 +395,13 @@ input:focus,select:focus,textarea:focus{outline:none;border-color:var(--accent);
 /* ─── footer ───────────────────────────────────────────────── */
 footer.btm{border-top:1px solid var(--rule);padding:var(--s6) 0 var(--s7);
   font-family:var(--mono);font-size:11px;line-height:1.75;color:var(--ink-3)}
-footer.btm .wrap{display:grid;grid-template-columns:1.6fr 1fr auto;gap:var(--s5);align-items:start}
+footer.btm .wrap{display:grid;grid-template-columns:1.6fr 1fr;gap:var(--s5);align-items:start}
 @media (max-width:820px){footer.btm .wrap{grid-template-columns:1fr}}
 footer.btm p{margin:0 0 var(--s1);max-width:62ch}
 footer.btm b{color:var(--ink)}
 .fnav{display:flex;flex-direction:column;gap:var(--s1)}
 .fnav a{color:var(--ink-2);text-decoration:none;letter-spacing:.04em;text-transform:uppercase;font-size:10.5px}
 .fnav a:hover{color:var(--accent)}
-.tog{font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;
-  background:none;border:1px solid var(--rule-2);color:var(--ink-3);padding:7px 12px;
-  border-radius:3px;cursor:pointer;white-space:nowrap}
-.tog:hover{color:var(--ink);border-color:var(--ink-3)}
 
 /* ─── shared layout splits ─────────────────────────────────── */
 .hero-split{display:grid;grid-template-columns:1.15fr .85fr;
@@ -540,8 +483,6 @@ footer.btm b{color:var(--ink)}
 .logo img{display:block;max-height:30px;max-width:118px;width:auto;height:auto;
   filter:brightness(0);opacity:.5;transition:opacity .15s}
 .logo:hover img{opacity:.8}
-:root[data-theme="dark"] .logo img{filter:brightness(0) invert(1);opacity:.6}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .logo img{filter:brightness(0) invert(1);opacity:.6}}
 .logos.edu{grid-template-columns:repeat(auto-fill,minmax(172px,1fr))}
 .logos.edu .logo span{font-family:var(--body);text-transform:none;font-weight:600;
   font-size:.98rem;letter-spacing:0}
