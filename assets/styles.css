@@ -102,18 +102,17 @@ header.top{position:sticky;top:0;z-index:60;background:var(--ground);
   text-transform:uppercase;color:var(--ink);text-decoration:none;
   display:flex;align-items:center;gap:9px;flex-shrink:0}
 .brand{gap:7px}
-.brand .wordmark{height:32px;aspect-ratio:866/200;flex-shrink:0;display:block;position:relative}
-.brand .wordmark img{position:absolute;inset:0;width:100%;height:100%}
-/* ROBIX letters: alpha mask filled with the ink colour, so they follow the theme */
-.brand .wordmark::after{content:"";position:absolute;inset:0;background:currentColor;
-  -webkit-mask:url(logo-text.png) center/100% 100% no-repeat;mask:url(logo-text.png) center/100% 100% no-repeat}
+.brand .wordmark{height:32px;width:auto;flex-shrink:0;display:block}
 .brand .sub{font-size:18px;font-weight:700;color:var(--ink-2);margin-left:3px}
-.brand .wm-d{display:none}
-:root[data-theme="dark"] .brand .wm-l{display:none}
-:root[data-theme="dark"] .brand .wm-d{display:block}
+/* logo: black arm + white joints on light; reversed (light arm, ground-coloured joints) on dark */
+.lg-arm{fill:#000}.lg-ring{stroke:#fff}.lg-ring-f{fill:#fff}
+:root[data-theme="dark"] .lg-arm{fill:var(--ink)}
+:root[data-theme="dark"] .lg-ring{stroke:var(--ground)}
+:root[data-theme="dark"] .lg-ring-f{fill:var(--ground)}
 @media (prefers-color-scheme:dark){
-  :root:not([data-theme="light"]) .brand .wm-l{display:none}
-  :root:not([data-theme="light"]) .brand .wm-d{display:block}
+  :root:not([data-theme="light"]) .lg-arm{fill:var(--ink)}
+  :root:not([data-theme="light"]) .lg-ring{stroke:var(--ground)}
+  :root:not([data-theme="light"]) .lg-ring-f{fill:var(--ground)}
 }
 /* phones: smaller wordmark so lang toggle + menu button fit */
 @media (max-width:520px){
