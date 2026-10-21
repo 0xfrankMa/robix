@@ -108,6 +108,19 @@ header.top{position:sticky;top:0;z-index:60;background:var(--ground);
 .brand .wordmark::after{content:"";position:absolute;inset:0;background:currentColor;
   -webkit-mask:url(logo-text.png) center/100% 100% no-repeat;mask:url(logo-text.png) center/100% 100% no-repeat}
 .brand .sub{font-size:18px;font-weight:700;color:var(--ink-2);margin-left:3px}
+.brand .wm-d{display:none}
+:root[data-theme="dark"] .brand .wm-l{display:none}
+:root[data-theme="dark"] .brand .wm-d{display:block}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]) .brand .wm-l{display:none}
+  :root:not([data-theme="light"]) .brand .wm-d{display:block}
+}
+/* phones: smaller wordmark so lang toggle + menu button fit */
+@media (max-width:520px){
+  .top-in{gap:var(--s3)}
+  .brand .wordmark{height:24px}
+  .brand .sub{font-size:14px;margin-left:0}
+}
 .nav{margin-left:auto;display:flex;gap:var(--s1);align-items:center}
 .nav a.lnk{font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.04em;
   text-transform:uppercase;color:var(--ink-2);text-decoration:none;
