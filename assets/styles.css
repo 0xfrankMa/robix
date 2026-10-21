@@ -94,7 +94,7 @@ h3{font-family:var(--body);font-weight:600;font-size:1.02rem;line-height:1.35;ma
 .btn-sm{font-size:11px;padding:8px 12px}
 
 /* ─── header ───────────────────────────────────────────────── */
-header.top{position:sticky;top:0;z-index:60;background:var(--ground);
+header.top{position:sticky;top:0;z-index:60;background:var(--ground);color:var(--ink);
   border-bottom:1px solid var(--rule)}
 .top-in{max-width:var(--max);margin:0 auto;padding:var(--s3) var(--pad);
   display:flex;align-items:center;gap:var(--s4)}
@@ -104,16 +104,34 @@ header.top{position:sticky;top:0;z-index:60;background:var(--ground);
 .brand{gap:7px}
 .brand .wordmark{height:32px;width:auto;flex-shrink:0;display:block}
 .brand .sub{font-size:18px;font-weight:700;color:var(--ink-2);margin-left:3px}
-/* logo: black arm + white joints on light; reversed (light arm, ground-coloured joints) on dark */
+/* logo: black arm + white joints (original artwork colours) */
 .lg-arm{fill:#000}.lg-ring{stroke:#fff}.lg-ring-f{fill:#fff}
-:root[data-theme="dark"] .lg-arm{fill:var(--ink)}
-:root[data-theme="dark"] .lg-ring{stroke:var(--ground)}
-:root[data-theme="dark"] .lg-ring-f{fill:var(--ground)}
-@media (prefers-color-scheme:dark){
-  :root:not([data-theme="light"]) .lg-arm{fill:var(--ink)}
-  :root:not([data-theme="light"]) .lg-ring{stroke:var(--ground)}
-  :root:not([data-theme="light"]) .lg-ring-f{fill:var(--ground)}
-}
+/* header stays on the light palette in every theme, so the logo always
+   sits on the ground it was drawn for (same as phones in light mode) */
+:root[data-theme="dark"] header.top{
+  --ground:#E9EAEA; --surface:#FFF; --surface-2:#F3F4F4; --surface-3:#E3E5E5;
+  --ink:#15181A; --ink-2:#4C5355; --ink-3:#7A8183;
+  --rule:#D7DADA; --rule-2:#BABEBE;
+  --accent:#C8451A; --accent-hi:#E1541C; --accent-soft:#FBEAE3; --on-accent:#FFF;
+  --ok:#1B6E4B; --ok-soft:#E4F0EA; --warn:#8B5810; --warn-soft:#F8EFDF;
+  --paper:#FCFCFB;                       /* schematic drawing ground */
+  --grid:#DCDFDF;                        /* schematic grid lines */
+  --sh-1:0 1px 2px rgba(21,24,26,.06);
+  --sh-2:0 1px 2px rgba(21,24,26,.05),0 12px 28px -18px rgba(21,24,26,.28);
+  --sh-3:0 2px 5px rgba(21,24,26,.07),0 20px 44px -22px rgba(21,24,26,.36);
+  color-scheme:light}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) header.top{
+  --ground:#E9EAEA; --surface:#FFF; --surface-2:#F3F4F4; --surface-3:#E3E5E5;
+  --ink:#15181A; --ink-2:#4C5355; --ink-3:#7A8183;
+  --rule:#D7DADA; --rule-2:#BABEBE;
+  --accent:#C8451A; --accent-hi:#E1541C; --accent-soft:#FBEAE3; --on-accent:#FFF;
+  --ok:#1B6E4B; --ok-soft:#E4F0EA; --warn:#8B5810; --warn-soft:#F8EFDF;
+  --paper:#FCFCFB;                       /* schematic drawing ground */
+  --grid:#DCDFDF;                        /* schematic grid lines */
+  --sh-1:0 1px 2px rgba(21,24,26,.06);
+  --sh-2:0 1px 2px rgba(21,24,26,.05),0 12px 28px -18px rgba(21,24,26,.28);
+  --sh-3:0 2px 5px rgba(21,24,26,.07),0 20px 44px -22px rgba(21,24,26,.36);
+  color-scheme:light}}
 /* phones: smaller wordmark so lang toggle + menu button fit */
 @media (max-width:520px){
   .top-in{gap:var(--s3)}
